@@ -1,12 +1,8 @@
-from django.shortcuts import render, render_to_response, redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from datetime import datetime
 from django.template import loader
-from .models import Choice, Question
-from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
-from django.views import generic
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
+from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 # Create your views here.
@@ -50,9 +46,9 @@ class ResultsView(generic.DetailView):
 '''
 
 def homepage(request):
-    #c = {}
-    #c.update(csrf(request))
-    return render(request, 'polls/homepage.html')
+    #product = Product.objects.all()
+    context = {}
+    return render(request, 'polls/homepage.html', context)
 
 def login(request):
     return render(request, 'polls/login.html')
@@ -65,7 +61,7 @@ def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
     password = request.POST.get('password')
     user = authenticate(username=username, password=password)
     if user is not None:
-        login(request)
+        auth_login(request, user)
         return redirect(onsuccess)
     else:
         return redirect(onfail)
@@ -77,7 +73,7 @@ def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/signup')
         user = User(username=username, email=username)
         user.set_password(password)
         user.save()
-        login(request, user)
+        auth_login(request, user)
         return redirect(onsuccess)
     else:
         return redirect(onfail)    
@@ -89,8 +85,11 @@ def user_exists(username):
     return True
 
 def profile(request):
-    if request.user.is_authenticated():
-        user = request.user
-        return render(request, "polls/profile.html")
+    if request.user.username:
+        context = {}
+        context['username'] = request.user.username
+        #product = Product.objects.get(username=request.user.username)
+        #context['product'] = product
+        return render(request, "polls/profile.html", context)
     else:
-        return redirect('/polls/login')
+        return redirect('/polls/login')  
