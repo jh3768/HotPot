@@ -69,7 +69,7 @@ def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
     else:
         return redirect(onfail)
 
-def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/signup'):
+def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/login'):
     username = request.POST.get('email')
     password = request.POST.get('password')
     if not user_exists(username): 
