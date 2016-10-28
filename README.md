@@ -10,7 +10,7 @@ How to run the program:
 
 1. cd into Hotpot directory and run run.sh file
 2. Enter 127.0.0.1:8000/polls in your browser
-3. The homepage is shown shup and then click on the tabs accordingly and then the sub pages are shown such as log in/sign up.
+3. The homepage is shown up and then click on the tabs accordingly. The sub pages such as log in/sign up are shown up.
 
 Layout of the web application
 
