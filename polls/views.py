@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from polls.models import Product
 # Create your views here.
 
 '''
@@ -57,6 +56,9 @@ def login(request):
 def signup(request):
     return render(request, 'polls/signup.html')
 
+def about(request):
+    return render(request, 'polls/about.html')
+
 def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
     username = request.POST.get('email')
     password = request.POST.get('password')
@@ -86,11 +88,11 @@ def user_exists(username):
     return True
 
 def profile(request):
-    if request.user.username:
-        context = {}
-        context['username'] = request.user.username
-        product = Product.objects.filter(username=request.user.username)
-        context['product'] = product
-        return render(request, "polls/profile.html", context)
-    else:
-        return redirect('/polls/login')  
+    #if request.user.username:
+    #   context = {}
+    #   context['username'] = request.user.username
+        #product = Product.objects.get(username=request.user.username)
+        #context['product'] = product
+    return render(request, "polls/profile.html")
+            #else:
+#return redirect('/polls/login')
