@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from polls.models import Product
 # Create your views here.
 
 '''
@@ -88,8 +89,8 @@ def profile(request):
     if request.user.username:
         context = {}
         context['username'] = request.user.username
-        #product = Product.objects.get(username=request.user.username)
-        #context['product'] = product
+        product = Product.objects.filter(username=request.user.username)
+        context['product'] = product
         return render(request, "polls/profile.html", context)
     else:
         return redirect('/polls/login')  
