@@ -5,7 +5,6 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from polls.models import Product
 # Create your views here.
 
 '''
@@ -47,9 +46,8 @@ class ResultsView(generic.DetailView):
 '''
 
 def homepage(request):
-    product = Product.objects.all()
+    #product = Product.objects.all()
     context = {}
-    context['product'] = product
     return render(request, 'polls/homepage.html', context)
 
 def login(request):
@@ -57,6 +55,9 @@ def login(request):
 
 def signup(request):
     return render(request, 'polls/signup.html')
+
+def about(request):
+    return render(request, 'polls/about.html')
 
 def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
     username = request.POST.get('email')
@@ -87,23 +88,11 @@ def user_exists(username):
     return True
 
 def profile(request):
-    if request.user.username:
-        context = {}
-        context['username'] = request.user.username
-        product = Product.objects.filter(username=request.user.username)
-        context['product'] = product
-        return render(request, "polls/profile.html", context)
-    else:
-        return redirect('/polls/login')
-
-def post(request):
-    name = request.POST.get('name')
-    price = request.POST.get('price')
-    description = request.POST.get('description')
-    username = "rondogency@gmail.com"
-    product = Product(name=name, username=username, price=price, description=description)
-    product.save()
-    return redirect('/polls/profile')
-
-def delete(request):
-    return redirect('/polls/login')  
+    #if request.user.username:
+    #   context = {}
+    #   context['username'] = request.user.username
+        #product = Product.objects.get(username=request.user.username)
+        #context['product'] = product
+    return render(request, "polls/profile.html")
+            #else:
+#return redirect('/polls/login')
