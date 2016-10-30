@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
@@ -9,46 +9,6 @@ from django.forms.models import model_to_dict
 from django.core import serializers
 from polls.models import Product
 import json
-
-# Create your views here.
-
-'''
-def vote(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    try:
-        selected_choice = question.choice_set.get(pk=request.POST['choice'])
-    except (KeyError, Choice.DoesNotExist):
-        # Redisplay the question voting form.
-        return render(request, 'polls/detail.html', {
-            'question': question,
-            'error_message': "You didn't select a choice.",
-        })
-    else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
-
-class IndexView(generic.ListView):
-    template_name = 'polls/index.html'
-    context_object_name = 'latest_question_list'
-
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
-
-
-class DetailView(generic.DetailView):
-    model = Question
-    template_name = 'polls/detail.html'
-
-
-class ResultsView(generic.DetailView):
-    model = Question
-    template_name = 'polls/results.html'
-'''
 
 def homepage(request):
     return render(request, 'polls/homepage.html')
@@ -96,11 +56,30 @@ def user_exists(username):
     return True
 
 def profile(request):
-    #if request.user.username:
-    #   context = {}
-    #   context['username'] = request.user.username
-        #product = Product.objects.get(username=request.user.username)
-        #context['product'] = product
+    if request.user.username:
+        return render(request, "polls/profile.html")
+    else:
+        return redirect('/polls/login')
+
+def profilejson(request):
+    if request.user.username:
+        queryset = Product.objects.filter(username=request.user.username)
+        data = serializers.serialize("json", queryset)
+        return HttpResponse(data, content_type='application/json')
+    else:
+        return redirect('/polls/login')
+
+def post(request):
+    if request.user.username:
+        name = request.POST.get('name')
+        price = request.POST.get('price')
+        description = request.POST.get('description')
+        username = request.user.username
+        product = Product(name=name, username=username, price=price, description=description)
+        product.save()
+        return render(request, "polls/profile.html")
+    else:
+        return redirect('/polls/login')
+
+def delete(request):
     return render(request, "polls/profile.html")
-            #else:
-#return redirect('/polls/login')

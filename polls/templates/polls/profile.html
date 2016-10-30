@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-       <title>Hotpot</title>
+    <title>Hotpot</title>
 
     <!-- Bootstrap Core CSS -->
     {% load static %}
@@ -78,8 +78,7 @@
             </div>
 
             <div class="col-md-9">
-
-    
+   
                 <div class="row carousel-holder" style="display: none;">
 
                     <div class="col-md-12">
@@ -114,7 +113,7 @@
 
                 <div class="row">
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product0">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
@@ -130,7 +129,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product1">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
@@ -146,7 +145,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product2">
                         <div class="thumbnail">
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
@@ -188,10 +187,28 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <script type="text/javascript">
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var obj = JSON.parse(this.responseText);
+            for (i=0; i<obj.length; i++){
+                $("#product"+i).html("<img class='img-responsive' src='http://placehold.it/320x150' alt=''>"+
+                                    "<p>"+obj[i].fields.name+"</p>"+
+                                    "<p>"+obj[i].fields.username+"</p>"+
+                                    "<p>"+obj[i].fields.price+"</p>"+
+                                    "<p>"+obj[i].fields.description+"</p>");
+            }
+          }
+        };
+        xhttp.open("GET", "/polls/homepagejson", true);
+        xhttp.send();
+    </script>
 
 </body>
 
