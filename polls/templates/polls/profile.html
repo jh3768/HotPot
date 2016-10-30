@@ -73,9 +73,25 @@
                 <div class="list-group">
                     <a href="#" class="list-group-item">My Posts</a>
                     <a href="#" class="list-group-item">My Cart</a>
-                
+                    <a class="list-group-item" id="postItem" onclick="showPostForm()">Post Product</a>
                 </div>
+
+
+                <div id="contactForm" style="display: none;"> 
+                    <h>Product Details</h>
+  
+                    <form action="{% url 'polls:post' %}" method="post"> {% csrf_token %}
+                        <input placeholder="Name" type="text"  name="name" required />
+                        <input placeholder="Price" type="price" name="price" required />
+                        <textarea placeholder="Description" name="description" ></textarea>
+                        <input class="formBtn" type="submit" />
+                    </form>
+                </div>
+
             </div>
+
+
+
 
             <div class="col-md-9">
    
@@ -163,6 +179,113 @@
 
                 </div>
 
+
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product3">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>Description</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"></p>
+                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="#">Second Product</a>
+                                </h4>
+                                <p>Description</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"></p>
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product5">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="#">Third Product</a>
+                                </h4>
+                                <p>Description</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product6">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$24.99</h4>
+                                <h4><a href="#">First Product</a>
+                                </h4>
+                                <p>Description</a>.</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"></p>
+                    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product7">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$64.99</h4>
+                                <h4><a href="#">Second Product</a>
+                                </h4>
+                                <p>Description</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"></p>
+                        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 col-lg-4 col-md-4" id="product8">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="">
+                            <div class="caption">
+                                <h4 class="pull-right">$74.99</h4>
+                                <h4><a href="#">Third Product</a>
+                                </h4>
+                                <p>Description</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right"></p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
             </div>
 
         </div>
@@ -208,6 +331,22 @@
         };
         xhttp.open("GET", "/polls/homepagejson", true);
         xhttp.send();
+
+
+function showPostForm(){
+    var e = document.getElementById('contactForm');
+    if(e.style.display == null || e.style.display == "none") {
+        e.style.display = "block";
+    } else {
+        e.style.display = "none";
+    }
+    
+}
+  
+
+  // 
+
+
     </script>
 
 </body>
