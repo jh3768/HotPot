@@ -5,6 +5,11 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.forms.models import model_to_dict
+from django.core import serializers
+from polls.models import Product
+import json
+
 # Create your views here.
 
 '''
@@ -46,9 +51,12 @@ class ResultsView(generic.DetailView):
 '''
 
 def homepage(request):
-    #product = Product.objects.all()
-    context = {}
-    return render(request, 'polls/homepage.html', context)
+    return render(request, 'polls/homepage.html')
+
+def homepagejson(request):
+    queryset = Product.objects.all()
+    data = serializers.serialize("json", queryset)
+    return HttpResponse(data, content_type='application/json')
 
 def login(request):
     return render(request, 'polls/login.html')

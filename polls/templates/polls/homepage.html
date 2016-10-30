@@ -29,7 +29,6 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -55,8 +54,6 @@
                     <li>
                         <a href="{% url 'polls:profile' %}">My Profile</a> {% csrf_token %}
                     </li>
-
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -79,98 +76,36 @@
 
         <!-- Projects Row -->
         <div class="row">
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-4 portfolio-item" id="product1">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="#">Product Name</a>
+                    <a href="#"> Products </a>
                 </h3>
-                <p> This is a good product</p>
+                <p> Description </p>
             </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Product Name</a>
-                </h3>
-                <p> This is a good product</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Product Name</a>
-                </h3>
-                <p> This is a good product</p>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                 <h3>
-                    <a href="#">Product Name</a>
-                </h3>
-                <p> This is a good product</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-4 portfolio-item" id="product2">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="#">Product Name</a>
+                    <a href="#"> Products </a>
                 </h3>
-                <p> This is a good product</p>
+                <p> Description </p>
             </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Product Name</a>
-                </h3>
-                <p> This is a good product</p>
-            </div>
-        </div>
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
+            <div class="col-md-4 portfolio-item" id="product3">
                 <a href="#">
                     <img class="img-responsive" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h3>
-                    <a href="#">Product Name</a>
+                    <a href="#"> Products </a>
                 </h3>
-                <p> This is a good product</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Product Name</a>
-                </h3>
-                <p> This is a good product</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#">Product Name</a>
-                </h3>
-                <p> This is a good product</p>
-            </div>
+                <p> Description </p>
+            </div>    
         </div>
-        <!-- /.row -->
 
         <hr>
 
@@ -220,10 +155,26 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <script type="text/javascript">
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var obj = JSON.parse(this.responseText);
+            $("#product1").html("<img class='img-responsive' src='http://placehold.it/700x400' alt=''>"+
+                                "<p>"+obj[0].fields.name+"</p>"+
+                                "<p>"+obj[0].fields.username+"</p>"+
+                                "<p>"+obj[0].fields.price+"</p>"+
+                                "<p>"+obj[0].fields.description+"</p>");
+          }
+        };
+        xhttp.open("GET", "/polls/homepagejson", true);
+        xhttp.send();
+    </script>
 
 </body>
 
