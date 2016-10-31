@@ -232,10 +232,10 @@
             var obj = JSON.parse(this.responseText);
             for (i=0; i<obj.length; i++){
                 $("#product"+i).html("<img class='img-responsive' src='http://placehold.it/700x400' alt=''>"+
-                                    "<p>"+obj[i].fields.name+"</p>"+
-                                    "<p>"+obj[i].fields.username+"</p>"+
-                                    "<p>"+obj[i].fields.price+"</p>"+
-                                    "<p>"+obj[i].fields.description+"</p>");
+                                    "<p>"+"Product Name: "+obj[i].fields.name+"</p>"+
+                                    "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                                    "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                                    "<p>"+"Description: "+obj[i].fields.description+"</p>");
             }
           }
         };

@@ -8,7 +8,6 @@ from django.contrib.auth.models import User
 from django.forms.models import model_to_dict
 from django.core import serializers
 from polls.models import Product
-import json
 
 def homepage(request):
     return render(request, 'polls/homepage.html')
@@ -82,4 +81,11 @@ def post(request):
         return redirect('/polls/login')
 
 def delete(request):
-    return render(request, "polls/profile.html")
+    if request.user.username:
+        name = request.POST.get('delete')
+        print(name)
+        if name:
+            Product.objects.filter(name=name, username=request.user.username).delete()
+        return render(request, "polls/profile.html")
+    else:
+        return redirect('/polls/login')

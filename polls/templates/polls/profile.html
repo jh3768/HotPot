@@ -84,13 +84,11 @@
                         <input placeholder="Name" type="text"  name="name" required />
                         <input placeholder="Price" type="price" name="price" required />
                         <textarea placeholder="Description" name="description" ></textarea>
-                        <input class="formBtn" type="submit" />
+                        <input class="formBtn" type="submit" value="Post Product"/>
                     </form>
                 </div>
 
             </div>
-
-
 
 
             <div class="col-md-9">
@@ -187,7 +185,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#">First Product</a>
+                                <h4><a href="#">Fourth Product</a>
                                 </h4>
                                 <p>Description</a>.</p>
                             </div>
@@ -203,7 +201,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="#">Second Product</a>
+                                <h4><a href="#">Fifth Product</a>
                                 </h4>
                                 <p>Description</p>
                             </div>
@@ -219,7 +217,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="#">Third Product</a>
+                                <h4><a href="#">Sixth Product</a>
                                 </h4>
                                 <p>Description</p>
                             </div>
@@ -240,7 +238,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#">First Product</a>
+                                <h4><a href="#">Seventh Product</a>
                                 </h4>
                                 <p>Description</a>.</p>
                             </div>
@@ -256,7 +254,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$64.99</h4>
-                                <h4><a href="#">Second Product</a>
+                                <h4><a href="#">Eighth Product</a>
                                 </h4>
                                 <p>Description</p>
                             </div>
@@ -272,7 +270,7 @@
                             <img src="http://placehold.it/320x150" alt="">
                             <div class="caption">
                                 <h4 class="pull-right">$74.99</h4>
-                                <h4><a href="#">Third Product</a>
+                                <h4><a href="#">Nineth Product</a>
                                 </h4>
                                 <p>Description</p>
                             </div>
@@ -322,30 +320,27 @@
             var obj = JSON.parse(this.responseText);
             for (i=0; i<obj.length; i++){
                 $("#product"+i).html("<img class='img-responsive' src='http://placehold.it/320x150' alt=''>"+
-                                    "<p>"+obj[i].fields.name+"</p>"+
-                                    "<p>"+obj[i].fields.username+"</p>"+
-                                    "<p>"+obj[i].fields.price+"</p>"+
-                                    "<p>"+obj[i].fields.description+"</p>");
+                                    "<p>"+"Product Name: "+obj[i].fields.name+"</p>"+
+                                    "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                                    "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                                    "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
+                                    "{% csrf_token %}"+
+                                    "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
+                                    "</form>");
             }
           }
         };
-        xhttp.open("GET", "/polls/homepagejson", true);
+        xhttp.open("GET", "/polls/profilejson", true);
         xhttp.send();
 
-
-function showPostForm(){
-    var e = document.getElementById('contactForm');
-    if(e.style.display == null || e.style.display == "none") {
-        e.style.display = "block";
-    } else {
-        e.style.display = "none";
-    }
-    
-}
-  
-
-  // 
-
+        function showPostForm(){
+            var e = document.getElementById('contactForm');
+            if(e.style.display == null || e.style.display == "none") {
+                e.style.display = "block";
+            } else {
+                e.style.display = "none";
+            }    
+        }
 
     </script>
 
