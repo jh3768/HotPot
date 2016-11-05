@@ -79,16 +79,21 @@ def post(request):
         username = request.user.username
         product = Product(name=name, username=username, price=price, description=description)
         product.save()
-        return render(request, "polls/profile.html")
+        user = User.objects.filter(username=request.user.username)
+        context = {}
+        context['user'] =  user
+        return render(request, "polls/profile.html", context)
     else:
         return redirect('/polls/login')
 
 def delete(request):
     if request.user.username:
         name = request.POST.get('delete')
-        print(name)
         if name:
             Product.objects.filter(name=name, username=request.user.username).delete()
-        return render(request, "polls/profile.html")
+        user = User.objects.filter(username=request.user.username)
+        context = {}
+        context['user'] =  user
+        return render(request, "polls/profile.html", context)
     else:
         return redirect('/polls/login')
