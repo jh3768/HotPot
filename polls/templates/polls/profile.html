@@ -53,9 +53,11 @@
                     <li>
                         <a href="{% url 'polls:login' %}">Login/Sign up</a> {% csrf_token %}
                     </li>
-                    <li>
-                        <a href="#">My Profile</a>
-                    </li>
+
+                    {% for u in user %}
+                     <li><a href="#">{{ u.username }}</a></li>
+                    {% endfor %}
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -69,7 +71,11 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">User name</p>
+
+                {% for u in user %}
+                <p class="lead">{{ u.username }}</p>
+                {% endfor %}
+
                 <div class="list-group">
                     <a href="#" class="list-group-item">My Posts</a>
                     <a href="#" class="list-group-item">My Cart</a>
@@ -316,6 +322,9 @@
     <script type="text/javascript">
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
+           //var vv = document.getElementById('profileText');    
+           //vv.innerHTML = "Hello";
+            
           if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             for (i=0; i<obj.length; i++){
@@ -328,7 +337,8 @@
                                     "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
                                     "</form>");
             }
-          }
+            //$("#profileText").html("<p>sds</p>");
+            }
         };
         xhttp.open("GET", "/polls/profilejson", true);
         xhttp.send();

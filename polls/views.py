@@ -56,7 +56,10 @@ def user_exists(username):
 
 def profile(request):
     if request.user.username:
-        return render(request, "polls/profile.html")
+        user = User.objects.filter(username=request.user.username)
+        context = {}
+        context['user'] =  user
+        return render(request, "polls/profile.html", context)
     else:
         return redirect('/polls/login')
 
