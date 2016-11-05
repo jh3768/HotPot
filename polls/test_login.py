@@ -8,7 +8,6 @@ class TestUser(TestCase):
         self.user = User.objects.create_user('temporary@gmail.com', 'temporary@gmail.com', 'temporary')
         self.c = Client()
         self.login = self.c.login(username='temporary@gmail.com', password='temporary')
-        #self.client = Client()
 
     def test_login(self):
         self.user = User.objects.get(username='temporary@gmail.com')
