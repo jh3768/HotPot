@@ -1,25 +1,24 @@
 #tests.py
 #import models
-from django.test import TestCase, TransactionTestCase, Client
+from django.test import TestCase, Client
 from django.contrib.auth.models import User
 
-class test_log_in(TestCase):
+class TestUser(TestCase):
     def setUp(self):
-        User.objects.create_user('temporary@gmail.com', 'temporary@gmail.com', 'temporary')
+        self.user = User.objects.create_user('temporary@gmail.com', 'temporary@gmail.com', 'temporary')
+        self.c = Client()
+        print (User.objects.values_list('username', flat=True))
         
-    def test_log_in(self):
-     
-        login = self.client.login(username='temporary@gmail.com', password='temporary')
-        self.assertTrue(login) 
+        #self.client = Client()
 
-        #self.assertEqual(response.context['E'], 'temporary@gmail.com')
+    def test_secure_page(self):
+        login = self.c.login(username='temporary@gmail.com', password='temporary')
+        response = self.c.get('/polls/profile/', follow=True)
+        self.user = User.objects.get(username='temporary@gmail.com')
+        self.assertTrue(login)
+        self.assertEqual(self.user.username, 'temporary@gmail.com')
+        self.assertEqual(self.user.email, 'temporary@gmail.com')
+        self.assertEqual(response.status_code, 200)
 
-
-class RegistrationTestCase(TestCase):
-    def setUp(self):
-        self.sample_user = RegistrationProfile.objects.create_inactive_user('temporary@gmail.com', 'temporary@gmail.com', 'temporary')
-        self.expired_user = RegistrationProfile.objects.create_inactive_user('temporary@gmail.com', 'temporary@gmail.com', 'temporary')
-        self.expired_user.date_joined -= datetime.timedelta(days=settings.ACCOUNT_ACTIVATION_DAYS + 1)
-        self.expired_user.save()
 
 
