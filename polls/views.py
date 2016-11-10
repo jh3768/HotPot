@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.forms.models import model_to_dict
 from django.core import serializers
 from polls.models import Product
@@ -34,6 +35,7 @@ def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
         auth_login(request, user)
         return redirect(onsuccess)
     else:
+        messages.add_message(request, messages.ERROR, 'Login Failed. Try again.', 'login', True)
         return redirect(onfail)
 
 def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/login'):
@@ -46,7 +48,8 @@ def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/login'):
         auth_login(request, user)
         return redirect(onsuccess)
     else:
-        return redirect(onfail)    
+        messages.add_message(request, messages.INFO, 'User already exists. Try again.', 'signup', True)
+        return redirect(onfail) 
 
 def user_exists(username):
     user_count = User.objects.filter(username=username).count()
@@ -72,28 +75,28 @@ def profilejson(request):
         return redirect('/polls/login')
 
 def post(request):
-    if request.user.username:
+    if request.user.username and request.method == 'POST':
         name = request.POST.get('name')
         price = request.POST.get('price')
         description = request.POST.get('description')
         username = request.user.username
         product = Product(name=name, username=username, price=price, description=description)
         product.save()
-        user = User.objects.filter(username=request.user.username)
-        context = {}
-        context['user'] =  user
-        return render(request, "polls/profile.html", context)
+        return redirect('/polls/profile')
     else:
-        return redirect('/polls/login')
+        if request.user.username:
+            return redirect('/polls/profile')
+        else:
+            return redirect('/polls/login')
 
 def delete(request):
-    if request.user.username:
+    if request.user.username and request.method == 'POST':
         name = request.POST.get('delete')
         if name:
             Product.objects.filter(name=name, username=request.user.username).delete()
-        user = User.objects.filter(username=request.user.username)
-        context = {}
-        context['user'] =  user
-        return render(request, "polls/profile.html", context)
+        return redirect('/polls/profile')
     else:
-        return redirect('/polls/login')
+        if request.user.username:
+            return redirect('/polls/profile')
+        else:
+            return redirect('/polls/login')

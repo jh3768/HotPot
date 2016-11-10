@@ -67,6 +67,13 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            {% if message.extra_tags == 'login' %}
+                                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
 				                    <form role="form" action="{% url 'polls:authlogin' %}" method="post" class="login-form"> {% csrf_token %}
 				                    	<div class="form-group" data-role="fieldcontain">
 				                    		<label class="sr-only" for="form-username">Username</label>
@@ -114,6 +121,13 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            {% if message.extra_tags == 'signup' %}
+                                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                            {% endif %}    
+                                        {% endfor %}
+                                    {% endif %}
 				                    <form role="form" action="{% url 'polls:authsignup' %}" method="post" class="registration-form"> {% csrf_token %}
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name</label>
