@@ -78,7 +78,6 @@
 
                 <div class="list-group">
                     <a href="#" class="list-group-item">My Posts</a>
-                    <a href="#" class="list-group-item">My Cart</a>
                     <a class="list-group-item" id="postItem" onclick="showPostForm()">Post Product</a>
                 </div>
 
@@ -98,38 +97,6 @@
 
 
             <div class="col-md-9">
-   
-                <div class="row carousel-holder" style="display: none;">
-
-                    <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                            </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-   
 
                 <div class="row">
 
@@ -322,22 +289,32 @@
     <script type="text/javascript">
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-           //var vv = document.getElementById('profileText');    
-           //vv.innerHTML = "Hello";
-            
           if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             for (i=0; i<obj.length; i++){
-                $("#product"+i).html("<img class='img-responsive' src='http://placehold.it/320x150' alt=''>"+
-                                    "<p>"+"Product Name: "+obj[i].fields.name+"</p>"+
-                                    "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
-                                    "<p>"+"Description: "+obj[i].fields.description+"</p>"+
-                                    "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
-                                    "{% csrf_token %}"+
-                                    "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
-                                    "</form>");
-            }
-            //$("#profileText").html("<p>sds</p>");
+                if (i % 3 == 0){
+                    $(".platform").append(
+                    "<div class=row"+i / 3+">"+
+                        "<div class='col-md-4 portfolio-item' id='product0'>"+
+                            "<img class='img-responsive' src='http://placehold.it/320x150' alt=''>"+
+                            "<h4>"+"Product Name: "+obj[i].fields.name+"</h4>"+
+                            "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                            "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                            "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                        "</div>"
+                    )
+                }
+                else{
+                    $(".row"+~~(i / 3)).append(
+                        "<div class='col-md-4 portfolio-item' id='product0'>"+
+                            "<img class='img-responsive' src='http://placehold.it/320x150' alt=''>"+
+                            "<h4>"+"Product Name: "+obj[i].fields.name+"</h4>"+
+                            "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                            "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                            "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                        "</div>"
+                    )
+                }
             }
         };
         xhttp.open("GET", "/polls/profilejson", true);

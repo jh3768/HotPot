@@ -74,136 +74,9 @@
         </div>
         <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item" id="product0">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>
+        <div class="platform"></div>
 
-            <div class="col-md-4 portfolio-item" id="product1">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>
-
-            <div class="col-md-4 portfolio-item" id="product2">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>    
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 portfolio-item" id="product3">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>
-
-            <div class="col-md-4 portfolio-item" id="product4">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>
-
-            <div class="col-md-4 portfolio-item" id="product5">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>    
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-4 portfolio-item" id="product6">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>
-
-            <div class="col-md-4 portfolio-item" id="product7">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>
-
-            <div class="col-md-4 portfolio-item" id="product8">
-                <a href="#">
-                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-                </a>
-                <h3>
-                    <a href="#"> Products </a>
-                </h3>
-                <p> Description </p>
-            </div>    
-        </div>
-
-        <hr>
-
-        <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
         <!-- /.row -->
-
         <hr>
 
         <!-- Footer -->
@@ -231,11 +104,29 @@
           if (this.readyState == 4 && this.status == 200) {
             var obj = JSON.parse(this.responseText);
             for (i=0; i<obj.length; i++){
-                $("#product"+i).html("<img class='img-responsive' src='http://placehold.it/700x400' alt=''>"+
-                                    "<p>"+"Product Name: "+obj[i].fields.name+"</p>"+
-                                    "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
-                                    "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
-                                    "<p>"+"Description: "+obj[i].fields.description+"</p>");
+                if (i % 3 == 0){
+                    $(".platform").append(
+                    "<div class=row"+i / 3+">"+
+                        "<div class='col-md-4 portfolio-item' id='product0'>"+
+                            "<img class='img-responsive' src='http://placehold.it/700x400' alt=''>"+
+                            "<h3>"+"Product Name: "+obj[i].fields.name+"</h3>"+
+                            "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                            "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                            "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                        "</div>"
+                    )
+                }
+                else{
+                    $(".row"+~~(i / 3)).append(
+                        "<div class='col-md-4 portfolio-item' id='product0'>"+
+                            "<img class='img-responsive' src='http://placehold.it/700x400' alt=''>"+
+                            "<h3>"+"Product Name: "+obj[i].fields.name+"</h3>"+
+                            "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                            "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                            "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                        "</div>"
+                    )
+                }
             }
           }
         };
