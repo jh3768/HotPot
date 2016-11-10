@@ -8,12 +8,14 @@ class TestLoggedUser(TestCase):
     def setUp(self):
         self.client = Client()
 
-        self.user = User.objects.create_user('temporary2@gmail.com', 'temporary2@gmail.com', 'temporary2')
+        self.user = User.objects.create_user('temporary3@gmail.com', 'temporary3@gmail.com', 'temporary3')
         self.user.save()
-        self.client.login(username='temporary2@gmail.com', password='temporary2@gmail.com')
+        self.client.login(username='temporary3@gmail.com', password='temporary3@gmail.com')
 
     def tearDown(self):
         self.user.delete()
+        User.objects.filter(username='temporary3@gmail.com').delete()
+
 
     def test_logged_user_get_homepage(self):
         response = self.client.get(('/polls/profile'), follow=True)
