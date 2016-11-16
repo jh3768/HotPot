@@ -20,7 +20,7 @@ class TestUser(TestCase):
 
         self.c = Client()
 
-    def test_signup_user1(self):
+    def test_login_user1(self):
         self.login = self.c.login(username='temporary@gmail.com', password='temporary')
         self.user1 = User.objects.get(username='temporary@gmail.com')
         "test if a user is able to log in"
@@ -31,7 +31,7 @@ class TestUser(TestCase):
         self.assertEqual(self.user1.username, 'temporary@gmail.com')
         self.assertEqual(self.user1.email, 'temporary@gmail.com')
          
-    def test_signup_user2(self):
+    def test_login_user2(self):
         self.login = self.c.login(username='temporary2@columbia.com', password='temporary')
         self.user2 = User.objects.get(username='temporary2@columbia.com')
         self.assertTrue(self.login)
