@@ -81,7 +81,7 @@ def post(request):
         description = request.POST.get('description')
         username = request.user.username
         product = Product(name=name, username=username, price=price, description=description)
-        product.save()
+        product.addProduct() 
         return redirect('/polls/profile')
     else:
         if request.user.username:
@@ -93,7 +93,7 @@ def delete(request):
     if request.user.username and request.method == 'POST':
         name = request.POST.get('delete')
         if name:
-            Product.objects.filter(name=name, username=request.user.username).delete()
+            Product.deleteProduct(name, request.user.username)
         return redirect('/polls/profile')
     else:
         if request.user.username:
