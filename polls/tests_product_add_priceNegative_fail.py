@@ -46,4 +46,26 @@ class ProductTestCase(TestCase):
         w.addProduct()
         self.assertFalse(Product.objects.filter(name = "only a test6").exists())
 
+    def test_whatever_creation7_failrange(self):
+        w = self.create_product(name = "only a test7", price = -0.0000000000000000000000000000000000003434324234324324234 )
+        w.addProduct()
+        self.assertFalse(Product.objects.filter(name = "only a test7").exists())
+
+    def test_whatever_creation8_failrange(self):
+        w = self.create_product(name = "only a test8", price = -3.434324234324324234 )
+        w.addProduct()
+        self.assertFalse(Product.objects.filter(name = "only a test8").exists())
+
+
+
+    def test_whatever_creation9_failrange(self):
+        w = self.create_product(name = "only a test9", price = -3434324234324324234 )
+        w.addProduct()
+        self.assertFalse(Product.objects.filter(name = "only a test9").exists())
+
+    def test_whatever_creation10_failrange(self):
+        w = self.create_product(name = "only a test10", price = -3434324234324324234888888888888888888888888888888888888888888888888)
+        w.addProduct()
+        self.assertFalse(Product.objects.filter(name = "only a test10").exists())
+
     
