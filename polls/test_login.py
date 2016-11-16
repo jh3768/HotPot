@@ -51,63 +51,63 @@ class TestUser(TestCase):
         response = self.c.get('/polls/profile/', follow=True)
         self.assertEqual(response.status_code, 200)    
          
-#     def test_user_invalid_email_address1(self):
-#         self.login = self.c.login(username='invalid_email_address', password='temporary')
-#         self.assertFalse(self.login)
-#      
-#     def test_user_invalid_email_address2(self):
-#         self.login = self.c.login(username='invalid_email_address2', password='temporary')
-#         self.assertFalse(self.login) 
-#          
-#     def test_user_invalid_long_email1(self):
-#         self.login = self.c.login(username='user8', password='temporary')
-#         self.assertFalse(self.login)
-#          
-#     def test_user_invalid_long_email2(self):
-#         self.login = self.c.login(username='user19', password='temporary')
-#         self.assertFalse(self.login)    
+    def test_user_invalid_email_address1(self):
+        self.login = self.c.login(username='invalid_email_address', password='temporary')
+        self.assertFalse(self.login)
+     
+    def test_user_invalid_email_address2(self):
+        self.login = self.c.login(username='invalid_email_address2', password='temporary')
+        self.assertFalse(self.login) 
+         
+    def test_user_invalid_long_email1(self):
+        self.login = self.c.login(username='user8', password='temporary')
+        self.assertFalse(self.login)
+         
+    def test_user_invalid_long_email2(self):
+        self.login = self.c.login(username='user19', password='temporary')
+        self.assertFalse(self.login)    
                        
-#     def test_user_empty_username(self):
-#         self.login = self.c.login(username='user4', password='temporary')
-#         self.assertFalse(self.login) 
-#         self.assertRaises(excClass, callableObj)
+    def test_user_empty_username(self):
+        self.login = self.c.login(username='user4', password='temporary')
+        self.assertFalse(self.login) 
+        self.assertRaises(excClass, callableObj)
  
          
-#     def test_user_empty_username(self):
-#         self.login = self.c.login(username=' ', password='temporary')
-#         self.assertFalse(self.login) 
-#          
-#     def test_user_empty_email1(self):
-#         self.login = self.c.login(username='user3', password='temporary')
-#         self.assertFalse(self.login)    
-#          
-#     def test_user_empty_email2(self):
-#         self.login = self.c.login(username='user14', password='temporary')
-#         self.assertFalse(self.login)      
-#          
-#     def test_user_empty_password1(self):
-#         self.login = self.c.login(username='user5', password='')
-#         self.assertFalse(self.login)   
-#       
-#     def test_user_empty_password2(self):
-#         self.login = self.c.login(username='user16', password=' ')
-#         self.assertFalse(self.login)            
-#                
-#     def test_user_long_password(self):
-#         self.login = self.c.login(username='user23', password='gergeogogo3ht2rh20rh2rh23r83r23hr23r2398r9hwhehf23hr203rh203hgjkegf3034h0th34th34t834ht934t3gnkergn34gh34r')
-#         self.assertFalse(self.login)            
-#                          
-#     def test_user_no_last_name1(self):
-#         self.login = self.c.login(username='I do not have last name', password='temporary')
-#         self.assertFalse(self.login)
-#         
-#     def test_user_no_last_name2(self):
-#         self.login = self.c.login(username='I do not have last name', password='temporary')
-#         self.assertFalse(self.login)    
-#         
-#     def test_user_no_first_name(self):
-#         self.login = self.c.login(username='I do not have first name', password='temporary')
-#         self.assertFalse(self.login)
+    def test_user_empty_username(self):
+        self.login = self.c.login(username=' ', password='temporary')
+        self.assertFalse(self.login) 
+         
+    def test_user_empty_email1(self):
+        self.login = self.c.login(username='user3', password='temporary')
+        self.assertFalse(self.login)    
+         
+    def test_user_empty_email2(self):
+        self.login = self.c.login(username='user14', password='temporary')
+        self.assertFalse(self.login)      
+         
+    def test_user_empty_password1(self):
+        self.login = self.c.login(username='user5', password='')
+        self.assertFalse(self.login)   
+      
+    def test_user_empty_password2(self):
+        self.login = self.c.login(username='user16', password=' ')
+        self.assertFalse(self.login)            
+               
+    def test_user_long_password(self):
+        self.login = self.c.login(username='user23', password='gergeogogo3ht2rh20rh2rh23r83r23hr23r2398r9hwhehf23hr203rh203hgjkegf3034h0th34th34t834ht934t3gnkergn34gh34r')
+        self.assertFalse(self.login)            
+                         
+    def test_user_no_last_name1(self):
+        self.login = self.c.login(username='I do not have last name', password='temporary')
+        self.assertFalse(self.login)
+        
+    def test_user_no_last_name2(self):
+        self.login = self.c.login(username='I do not have last name', password='temporary')
+        self.assertFalse(self.login)    
+        
+    def test_user_no_first_name(self):
+        self.login = self.c.login(username='I do not have first name', password='temporary')
+        self.assertFalse(self.login)
          
      
                     
