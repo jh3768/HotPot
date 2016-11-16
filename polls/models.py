@@ -22,17 +22,9 @@ class Product(models.Model):
 
 
     def deleteProduct(myName, user_name):
-        try:
-            p = Product.objects.get(name=myName, username = user_name)
-        except  Product.DoesNotExist:
-            p = None
-
-        if p != None:
-            p.delete()
-        else:
-            msg = "object does not exist"
-            print (msg)
-            return msg
+        p = Product.objects.get(name=myName, username = user_name)
+        p.delete()
+      
 
     def __str__(self):
         return self.name
