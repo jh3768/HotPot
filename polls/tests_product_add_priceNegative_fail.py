@@ -19,26 +19,31 @@ class ProductTestCase(TestCase):
         w.addProduct()
         self.assertFalse(Product.objects.filter(name = "only a test1").exists())
 
-    def test_whatever_creation1_failrange(self):
+    def test_whatever_creation2_failrange(self):
         w = self.create_product(name = "only a test2", price = -100000000000000000000)
         w.addProduct()
         self.assertFalse(Product.objects.filter(name = "only a test2").exists())
 
-    def test_whatever_creation1_failrange(self):
+    def test_whatever_creation3_failrange(self):
         w = self.create_product(name = "only a test3", price = -100088888888888888888800000000000000000)
         w.addProduct()
         self.assertFalse(Product.objects.filter(name = "only a test3").exists())
 
 
-    def test_whatever_creation1_failrange(self):
+    def test_whatever_creation4_failrange(self):
         w = self.create_product(name = "only a test4", price = -0.000001)
         w.addProduct()
         self.assertFalse(Product.objects.filter(name = "only a test4").exists())
 
 
-    def test_whatever_creation1_failrange(self):
+    def test_whatever_creation5_failrange(self):
         w = self.create_product(name = "only a test5", price = -1 )
         w.addProduct()
         self.assertFalse(Product.objects.filter(name = "only a test5").exists())
+
+    def test_whatever_creation6_failrange(self):
+        w = self.create_product(name = "only a test6", price = -0.000000000000000001 )
+        w.addProduct()
+        self.assertFalse(Product.objects.filter(name = "only a test6").exists())
 
     
