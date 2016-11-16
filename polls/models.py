@@ -14,16 +14,25 @@ class Product(models.Model):
 
     ''' add Product to db'''
     def addProduct(self):
-    	if ((float)(self.price) < 0 or (float)(self.price) > 1000000):
-    		return None
-    	if (len(self.name) > 30 or len(self.description) > 30):
-    		return None
-    	self.save()
+        if ((float)(self.price) < 0 or (float)(self.price) > 1000000):
+            return None
+        if (len(self.name) > 30 or len(self.description) > 30):
+            return None
+        self.save()
 
 
     def deleteProduct(myName, user_name):
-    	p = Product.objects.get(name=myName, username = user_name)
-    	p.delete()
+        try:
+            p = Product.objects.get(name=myName, username = user_name)
+        except  Product.DoesNotExist:
+            p = None
+
+        if p != None:
+            p.delete()
+        else:
+            msg = "object does not exist"
+            print (msg)
+            return msg
 
     def __str__(self):
         return self.name
