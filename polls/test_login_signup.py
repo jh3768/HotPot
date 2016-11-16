@@ -27,7 +27,7 @@ class TestUser(TestCase):
         self.assertTrue(self.login)
         "test if a user is authenticated"
         self.assertIn('_auth_user_id', self.c.session)
-        "test if the user has the same passowrd and username from initialization"
+        "test if the user has the same passowrd and username from signup"
         self.assertEqual(self.user1.username, 'temporary@gmail.com')
         self.assertEqual(self.user1.email, 'temporary@gmail.com')
          
