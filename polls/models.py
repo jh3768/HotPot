@@ -11,5 +11,21 @@ class Product(models.Model):
     username = models.CharField(max_length=100)
     price = models.FloatField(default=0)
     description = models.CharField(max_length=200)
+
+    ''' add Product to db'''
+    def addProduct(self):
+    	if ((float)(self.price) < 0 or (float)(self.price) > 1000000):
+    		return 
+    	if (len(self.name) > 30 or len(self.description) > 30):
+    		return 
+    	self.save()
+
+
+    def deleteProduct(myName, user_name):
+    	p = Product.objects.get(name=myName, username=user_name)
+    	p.delete()
+
     def __str__(self):
         return self.name
+
+
