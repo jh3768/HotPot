@@ -36,4 +36,49 @@ class ProductTestCase(TestCase):
         self.assertTrue(isinstance(w, Product))
         Product.deleteProduct(myName = w.name, user_name = w.username)
         self.assertFalse(Product.objects.filter(name = "Introduction to algorithms").exists())
+
+    def test_delete_product4 (self):
+        w = Product.objects.get(name= "Introduction to computer science")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to computer science").exists())
+
+    def test_delete_product5 (self):
+        w = Product.objects.get(name= "Introduction to operating system")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to operating system").exists())
+
+
+    def test_delete_product6 (self):
+        w = Product.objects.get(name= "Introduction to computer network")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to computer network").exists())
+
+    def test_delete_product7 (self):
+        w = Product.objects.get(name= "Introduction to UI design")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to UI design").exists())
+
+
+    def test_delete_product8 (self):
+        w = Product.objects.get(name= "Introduction to machine learning")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to machine learning").exists())
+
+    def test_delete_product9 (self):
+        w = Product.objects.get(name= "Introduction to software engineering")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to software engineering").exists())
+
+    def test_delete_product10 (self):
+        w = Product.objects.get(name= "Introduction to data science")    
+        self.assertTrue(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to data science").exists())
+
    
