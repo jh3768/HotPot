@@ -18,12 +18,16 @@ class ProductTestCase(TestCase):
         
 
     def test_delete_product1_fail1 (self):
-        p=Product()
-        p.name = "only for test"  
-        p.username = "yanan"
-        Product.deleteProduct(myName = p.name, user_name = p.username)
-        #self.assertFalse(Product.objects.filter(name = "Introduction to computer system 1").exists())
+        w = Product.objects.get(name= "Introduction to computer system 1")    
+        self.assertFalse(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertFalse(Product.objects.filter(name = "Introduction to computer system 1").exists())
 
+    def test_delete_product1_fail2 (self):
+        w = Product.objects.get(name= "Introduction to computer system 2")    
+        self.assertFalse(isinstance(w, Product))
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+        self.assertTrue(Product.objects.filter(name = "Introduction to computer system 2").exists())
 
 
     
