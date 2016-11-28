@@ -51,7 +51,7 @@
 
                     </li>
                     <li>
-                        <a href="{% url 'polls:login' %}">Login/Sign up</a> {% csrf_token %}
+                        <a href="{% url 'polls:logout' %}">Logout</a> {% csrf_token %}
                     </li>
                     {% if user %}
                         {% for u in user %}
