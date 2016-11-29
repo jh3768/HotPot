@@ -46,10 +46,24 @@ class Product(models.Model):
             msg = "does not exists"
             print (msg)
 
-        
-      
+          
 
     def __str__(self):
         return self.name
+    
+    
+class ImageForm(forms.Form):
+    """Image upload form."""
+    name = forms.CharField(max_length = 100)
+    image = forms.ImageField()
+        
+    
+class Image(models.Model):
+    path = models.CharField(max_length = 300)
+    name = models.CharField(max_length = 30)
+    picture = models.ImageField(upload_to = 'pictures')
+    class Meta:
+        db_table = "image"
+        
 
 
