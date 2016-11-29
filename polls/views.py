@@ -11,10 +11,15 @@ from django.forms.models import model_to_dict
 from django.core import serializers
 #from polls.models import Product 
 from polls.models import Product, Image
-from .forms import UploadFileForm
+from .forms import UploadFileForm 
 
 def homepage(request):
     return render(request, 'polls/homepage.html')
+
+def list(request):
+    return render(request, 'polls/list.html')
+
+
 
 def homepagejson(request):
     queryset = Product.objects.all()
@@ -101,16 +106,23 @@ def profilejson(request):
 #             return redirect('/polls/profile')
 #         else:
 #             return redirect('/polls/login')
+   
 
 def post(request):
     if request.user.username and request.method == 'POST':
         MyImageForm = UploadFileForm(request.POST, request.FILES)
+       
+        saved = False
         name = request.POST.get('name')
-        print (name)
+      
         if MyImageForm.is_valid():
-            print ("yyyyyyyyyyyyyyyyyyyyyyyyyyyy")
-            picture = Image(name = name, pic = MyImageForm.cleaned_data["image"])
+            print ("for is valid!!")
+            picture = Image()
+            picture.name = MyImageForm.cleaned_data["name"]
+            picture.pic = MyImageForm.cleaned_data["pic"]
+            picture.save()
             picture.addImage()
+            saved = True
         price = request.POST.get('price')
         description = request.POST.get('description')
         username = request.user.username
@@ -118,6 +130,7 @@ def post(request):
         product.addProduct() 
         return redirect('/polls/profile')
     else:
+
         if request.user.username:
             return redirect('/polls/profile')
         else:

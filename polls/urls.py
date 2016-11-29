@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^profilejson/', views.profilejson, name='profilejson'),
     url(r'^post/', views.post, name='post'),
     url(r'^delete/', views.delete, name='delete'),
+
 ]
