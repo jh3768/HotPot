@@ -70,7 +70,16 @@
                 <h1 class="page-header">Hotpot
                     <small>Products</small>
                 </h1>
+
+            <div align="right" class="page-header">
+                <form role="form" action="{% url 'polls:homepagejson' %}" method="post" class="registration-form"> {% csrf_token %}
+                    <button type="submit" class="btn" name="book" >Books</button>
+                    <button type="submit" class="btn" name="furniture">Furniture</button>
+                    <button type="submit" class="btn" name="others">Others</button>
+                </form>
             </div>
+            </div>
+
         </div>
         <!-- /.row -->
 
