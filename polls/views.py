@@ -9,7 +9,8 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib import messages
 from django.forms.models import model_to_dict
 from django.core import serializers
-from polls.models import Product 
+#from polls.models import Product 
+from polls.models import Product, Image, ImageForm
 
 def homepage(request):
     return render(request, 'polls/homepage.html')
@@ -85,9 +86,30 @@ def profilejson(request):
     else:
         return redirect('/polls/login')
 
+# def post(request):
+#     if request.user.username and request.method == 'POST':
+#         name = request.POST.get('name')
+#         price = request.POST.get('price')
+#         description = request.POST.get('description')
+#         username = request.user.username
+#         product = Product(name=name, username=username, price=price, description=description)
+#         product.addProduct() 
+#         return redirect('/polls/profile')
+#     else:
+#         if request.user.username:
+#             return redirect('/polls/profile')
+#         else:
+#             return redirect('/polls/login')
+
 def post(request):
     if request.user.username and request.method == 'POST':
+        MyImageForm = ImageForm(request.POST, request.FILES)
         name = request.POST.get('name')
+        if MyImageForm.is_valid():
+            picture = Image()
+            picture.name = name
+            picture.picture = MyImageForm.cleaned_data["picture"]
+            picture.save()
         price = request.POST.get('price')
         description = request.POST.get('description')
         username = request.user.username
@@ -98,7 +120,7 @@ def post(request):
         if request.user.username:
             return redirect('/polls/profile')
         else:
-            return redirect('/polls/login')
+            return redirect('/polls/login')  
 
 def delete(request):
     if request.user.username and request.method == 'POST':
