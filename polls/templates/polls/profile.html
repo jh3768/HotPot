@@ -157,7 +157,7 @@
                 if (i % 3 == 0)
                 {
                     $(".platform").append(
-                    "<div class=row"+i / 3+">"+
+                   "<div class=row"+i / 3+">"+
                         "<div class='col-md-4 portfolio-item' id='product0'>"+
                             "<img class='img-responsive' src='http://placehold.it/320x150' alt=''>"+
                             "<h4>"+"Product Name: "+obj[i].fields.name+"</h4>"+
@@ -167,6 +167,17 @@
                             "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
                             "{% csrf_token %}"+
                             "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
+                            "</form>"+
+                            "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
+                            "{% csrf_token %}"+
+                            "<label for='name'>"+"Product name: "+"</label>"+"<br/>"+
+                            "<input id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                            "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
+                            "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
+                            "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
+                            "<input id='description' class='input' name='description' type='text' value="+obj[i].fields.description
+                            + "><br/>"+
+                            "<button name='edit' type='submit' value="+obj[i].fields.name+">edit</button>"+ "<br/>"+
                             "</form>"+
                         "</div>"
                     )
@@ -183,6 +194,17 @@
                             "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
                             "{% csrf_token %}"+
                             "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
+                            "</form>"+
+                             "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
+                            "{% csrf_token %}"+
+                            "<label for='name'>"+"Product name: "+"</label>"+"<br/>"+
+                            "<input id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                            "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
+                            "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
+                            "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
+                            "<input id='description' class='input' name='description' type='text' value="+obj[i].fields.description
+                            + "><br/>"+
+                            "<button name='edit' type='submit' value="+obj[i].fields.name+">edit</button>"+ "<br/>"+
                             "</form>"+
                         "</div>"
                     )

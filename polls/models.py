@@ -60,11 +60,17 @@ class ImageForm(forms.Form):
         
     
 class Image(models.Model):
-    path = models.CharField(max_length = 300)
+    #path = models.CharField(max_length = 300)
     name = models.CharField(max_length = 30)
-    picture = models.ImageField(upload_to = 'pictures')
-    class Meta:
-        db_table = "image"
+    pic = models.ImageField(upload_to = 'Users/img/%Y/%m/%d')
+
+    def addImage(self): 
+        self.save()
+    
+#     class Meta:
+#         db_table = "image"
+#      
+
         
 
 

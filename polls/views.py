@@ -10,7 +10,8 @@ from django.contrib import messages
 from django.forms.models import model_to_dict
 from django.core import serializers
 #from polls.models import Product 
-from polls.models import Product, Image, ImageForm
+from polls.models import Product, Image
+from .forms import UploadFileForm
 
 def homepage(request):
     return render(request, 'polls/homepage.html')
@@ -103,13 +104,13 @@ def profilejson(request):
 
 def post(request):
     if request.user.username and request.method == 'POST':
-        MyImageForm = ImageForm(request.POST, request.FILES)
+        MyImageForm = UploadFileForm(request.POST, request.FILES)
         name = request.POST.get('name')
+        print (name)
         if MyImageForm.is_valid():
-            picture = Image()
-            picture.name = name
-            picture.picture = MyImageForm.cleaned_data["picture"]
-            picture.save()
+            print ("yyyyyyyyyyyyyyyyyyyyyyyyyyyy")
+            picture = Image(name = name, pic = MyImageForm.cleaned_data["image"])
+            picture.addImage()
         price = request.POST.get('price')
         description = request.POST.get('description')
         username = request.user.username
