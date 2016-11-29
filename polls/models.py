@@ -22,8 +22,31 @@ class Product(models.Model):
 
 
     def deleteProduct(myName, user_name):
-        p = Product.objects.get(name=myName, username = user_name)
-        p.delete()
+        try:
+            p = Product.objects.get(name=myName, username = user_name)
+        except Product.DoesNotExist:
+            p = None
+        if p:
+            p.delete()
+        else: 
+            msg = "does not exists"
+            print (msg)
+
+
+    def updateProduct(myName, myPrice, myDescription ):
+        try:
+            p = Product.objects.get(name=myName)
+        except Product.DoesNotExist:
+            p= None
+        if p:
+            p.price = myPrice
+            p.description = myDescription
+            p.save()
+        else: 
+            msg = "does not exists"
+            print (msg)
+
+        
       
 
     def __str__(self):

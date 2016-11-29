@@ -94,9 +94,18 @@ def delete(request):
         name = request.POST.get('delete')
         if name:
             Product.deleteProduct(name, request.user.username)
+        else:
+            name = request.POST.get('name')
+            price = request.POST.get('price')
+            description = request.POST.get('description')
+            Product.updateProduct(name, price, description)
         return redirect('/polls/profile')
     else:
         if request.user.username:
             return redirect('/polls/profile')
         else:
             return redirect('/polls/login')
+
+
+
+

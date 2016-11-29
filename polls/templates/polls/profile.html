@@ -335,7 +335,18 @@
                                     "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
                                     "{% csrf_token %}"+
                                     "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
-                                    "</form>");
+                                    "</form>"+
+                                     "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
+                                    "{% csrf_token %}"+
+                                    "<label for='name'>"+"Product name: "+"</label>"+"<br/>"+
+                                    "<input id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                                    "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
+                                    "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
+                                    "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
+                                    "<input id='description' class='input' name='description' type='text' value="+obj[i].fields.description+ "><br/>"+
+                                    "<button name='edit' type='submit' value="+obj[i].fields.name+">edit</button>"+ "<br/>"+                   
+                                    "</form>"
+                                    );
             }
             //$("#profileText").html("<p>sds</p>");
             }
