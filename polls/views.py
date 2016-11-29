@@ -5,10 +5,11 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib.auth import logout as auth_logout
 from django.contrib import messages
 from django.forms.models import model_to_dict
 from django.core import serializers
-from polls.models import Product
+from polls.models import Product 
 
 def homepage(request):
     return render(request, 'polls/homepage.html')
@@ -37,6 +38,16 @@ def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
     else:
         messages.add_message(request, messages.ERROR, 'Login Failed. Try again.', 'login', True)
         return redirect(onfail)
+
+
+def logout(request):
+    if request.user.username:
+        auth_logout(request)    
+        return render(request, 'polls/homepage.html')
+    else:
+        return redirect('/polls/login')
+
+
 
 def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/login'):
     username = request.POST.get('email')
