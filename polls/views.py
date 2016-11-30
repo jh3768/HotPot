@@ -118,8 +118,10 @@ def post(request):
         if MyImageForm.is_valid():
             print ("for is valid!!")
             picture = Image()
-            picture.name = MyImageForm.cleaned_data["name"]
+            picture.name = name
             picture.pic = MyImageForm.cleaned_data["pic"]
+            url = picture.pic.url
+            print (url)
             picture.save()
             picture.addImage()
             saved = True
@@ -127,6 +129,7 @@ def post(request):
         description = request.POST.get('description')
         username = request.user.username
         product = Product(name=name, username=username, price=price, description=description)
+        product.url = str(url) 
         product.addProduct() 
         return redirect('/polls/profile')
     else:

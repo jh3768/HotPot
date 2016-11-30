@@ -12,7 +12,7 @@ class Product(models.Model):
     username = models.CharField(max_length=100)
     price = models.FloatField(default=0)
     description = models.CharField(max_length=200)
-
+    url = models.CharField(max_length=200)
     ''' add Product to db'''
     def addProduct(self):
         if ((float)(self.price) < 0 or (float)(self.price) > 1000000):
@@ -62,7 +62,7 @@ class ImageForm(forms.Form):
 class Image(models.Model):
     #path = models.CharField(max_length = 300)
     name = models.CharField(max_length = 30)
-    pic = models.ImageField(upload_to = 'Users/img/%Y/%m/%d')
+    pic = models.ImageField()
 
     def addImage(self): 
         self.save()
