@@ -155,8 +155,7 @@
                             "</form>"+
                             "<form action="+"{% url 'polls:delete' %}"+" method='post' style='display: none;' id='EditForm" + i + "'>"+
                             "{% csrf_token %}"+
-                            "<label for='name'>"+"Product name: "+"</label>"+"<br/>"+
-                            "<input id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                            "<input type = hidden id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
                             "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
                             "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
                             "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
@@ -183,8 +182,7 @@
                             "</form>"+
                              "<form action="+"{% url 'polls:delete' %}"+" method='post' style='display: none;' id='EditForm" + i + "'>"+
                             "{% csrf_token %}"+
-                            "<label for='name'>"+"Product name: "+"</label>"+"<br/>"+
-                            "<input id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                            "<input type= hidden id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
                             "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
                             "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
                             "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
