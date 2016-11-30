@@ -16,25 +16,17 @@ from .forms import UploadFileForm
 def homepage(request):
     return render(request, 'polls/homepage.html')
 
-def list(request):
-    return render(request, 'polls/list.html')
-
-
-
 def homepagejson(request):
     category = request.GET.get('category')
     if category is None:
         queryset = Product.objects.all()
     else:
-        queryset = Product.objects.filter(username=category)
+        queryset = Product.objects.filter(category=category)
     data = serializers.serialize("json", queryset)
     return HttpResponse(data, content_type='application/json')
 
 def login(request):
     return render(request, 'polls/login.html')
-
-def signup(request):
-    return render(request, 'polls/signup.html')
 
 def about(request):
     return render(request, 'polls/about.html')
@@ -50,15 +42,12 @@ def auth_and_login(request, onsuccess='/polls/profile', onfail='/polls/login'):
         messages.add_message(request, messages.ERROR, 'Login Failed. Try again.', 'login', True)
         return redirect(onfail)
 
-
 def logout(request):
     if request.user.username:
         auth_logout(request)    
         return render(request, 'polls/homepage.html')
     else:
         return redirect('/polls/login')
-
-
 
 def auth_and_signup(request, onsuccess='/polls/profile', onfail='/polls/login'):
     username = request.POST.get('email')
@@ -96,38 +85,17 @@ def profilejson(request):
     else:
         return redirect('/polls/login')
 
-# def post(request):
-#     if request.user.username and request.method == 'POST':
-#         name = request.POST.get('name')
-#         price = request.POST.get('price')
-#         description = request.POST.get('description')
-#         username = request.user.username
-#         product = Product(name=name, username=username, price=price, description=description)
-#         product.addProduct() 
-#         return redirect('/polls/profile')
-#     else:
-#         if request.user.username:
-#             return redirect('/polls/profile')
-#         else:
-#             return redirect('/polls/login')
-   
-
 def post(request):
     if request.user.username and request.method == 'POST':
-        MyImageForm = UploadFileForm(request.POST, request.FILES)
-       
+        MyImageForm = UploadFileForm(request.POST, request.FILES)       
         saved = False
         name = request.POST.get('name')
-        url='not upload'
-      
+        url='not upload'      
         if MyImageForm.is_valid():
-            print ("for is valid!!")
             picture = Image()
             picture.name = name
             picture.pic = MyImageForm.cleaned_data["pic"]
             url = picture.pic.url
-            print (url)
-            print (url)
             picture.save()
             picture.addImage()
             saved = True
@@ -139,15 +107,11 @@ def post(request):
             p_name = obj.name
             if name == p_name:
                 return redirect('/polls/profile')
-
         product = Product(name=name, username=username, price=price, description=description, category=category)
         if  url == 'not upload':
             product.url = '/media/index.png'
-        else: 
-            
+        else:             
             product.url = str(url)
-        print (product.url)
-
         product.addProduct() 
         return redirect('/polls/profile')
     else:
