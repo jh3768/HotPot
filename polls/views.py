@@ -130,6 +130,11 @@ def post(request):
         price = request.POST.get('price')
         description = request.POST.get('description')
         username = request.user.username
+        for obj in Product.objects.all():
+            p_name = obj.name
+            if name == p_name:
+                return redirect('/polls/profile')
+
         product = Product(name=name, username=username, price=price, description=description)
         if  url == 'not upload':
             product.url = '/media/index.png'
