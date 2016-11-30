@@ -140,7 +140,7 @@ def post(request):
             if name == p_name:
                 return redirect('/polls/profile')
 
-        product = Product(name=name, username=username, price=price, description=description)
+        product = Product(name=name, username=username, price=price, description=description, category=category)
         if  url == 'not upload':
             product.url = '/media/index.png'
         else: 

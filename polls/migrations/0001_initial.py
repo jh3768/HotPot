@@ -30,6 +30,7 @@ class Migration(migrations.Migration):
                 ('price', models.FloatField(default=0)),
                 ('description', models.CharField(max_length=200)),
                 ('url', models.CharField(max_length=200)),
+                ('category', models.CharField(max_length=100)),
             ],
         ),
     ]
