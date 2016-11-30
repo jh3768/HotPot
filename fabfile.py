@@ -6,7 +6,7 @@ from fabric.contrib.console import confirm
 
 def test():
     with settings(warn_only=True):
-        result = local('python3 manage.py test polls', capture=True)
+        result = local('python3 manage.py test polls/test2', capture=True)
     if result.succeeded:
         print ("All tests passed !")
     if result.failed and not confirm("Tests failed. Continue anyway?"):
