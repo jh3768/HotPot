@@ -1,0 +1,1350 @@
+************* Module test_login
+C:  8, 0: Line too long (169/100) (line-too-long)
+C:  8, 0: No space allowed around keyword argument assignment
+        self.user1 = User.objects.create_user(username = 'temporary@gmail.com', email = 'temporary@gmail.com', last_name = 't', first_name = 'm', password = 'temporary')
+                                                       ^ (bad-whitespace)
+C:  8, 0: No space allowed around keyword argument assignment
+        self.user1 = User.objects.create_user(username = 'temporary@gmail.com', email = 'temporary@gmail.com', last_name = 't', first_name = 'm', password = 'temporary')
+                                                                                      ^ (bad-whitespace)
+C:  8, 0: No space allowed around keyword argument assignment
+        self.user1 = User.objects.create_user(username = 'temporary@gmail.com', email = 'temporary@gmail.com', last_name = 't', first_name = 'm', password = 'temporary')
+                                                                                                                         ^ (bad-whitespace)
+C:  8, 0: No space allowed around keyword argument assignment
+        self.user1 = User.objects.create_user(username = 'temporary@gmail.com', email = 'temporary@gmail.com', last_name = 't', first_name = 'm', password = 'temporary')
+                                                                                                                                           ^ (bad-whitespace)
+C:  8, 0: No space allowed around keyword argument assignment
+        self.user1 = User.objects.create_user(username = 'temporary@gmail.com', email = 'temporary@gmail.com', last_name = 't', first_name = 'm', password = 'temporary')
+                                                                                                                                                           ^ (bad-whitespace)
+C:  9, 0: Line too long (171/100) (line-too-long)
+C:  9, 0: No space allowed around keyword argument assignment
+        self.user2 = User.objects.create_user(username = 'invalid_email_address', email='invalid_email_address', password = 'temporary', last_name = 't', first_name = 'm')
+                                                       ^ (bad-whitespace)
+C:  9, 0: No space allowed around keyword argument assignment
+        self.user2 = User.objects.create_user(username = 'invalid_email_address', email='invalid_email_address', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                          ^ (bad-whitespace)
+C:  9, 0: No space allowed around keyword argument assignment
+        self.user2 = User.objects.create_user(username = 'invalid_email_address', email='invalid_email_address', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                   ^ (bad-whitespace)
+C:  9, 0: No space allowed around keyword argument assignment
+        self.user2 = User.objects.create_user(username = 'invalid_email_address', email='invalid_email_address', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                     ^ (bad-whitespace)
+C: 10, 0: Line too long (134/100) (line-too-long)
+C: 10, 0: No space allowed around keyword argument assignment
+        self.user3 = User.objects.create_user(username = 'user3', email='', password = 'temporary', last_name = 't', first_name = 'm')
+                                                       ^ (bad-whitespace)
+C: 10, 0: No space allowed around keyword argument assignment
+        self.user3 = User.objects.create_user(username = 'user3', email='', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                     ^ (bad-whitespace)
+C: 10, 0: No space allowed around keyword argument assignment
+        self.user3 = User.objects.create_user(username = 'user3', email='', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                              ^ (bad-whitespace)
+C: 10, 0: No space allowed around keyword argument assignment
+        self.user3 = User.objects.create_user(username = 'user3', email='', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                ^ (bad-whitespace)
+C: 11, 0: Line too long (140/100) (line-too-long)
+C: 11, 0: No space allowed around keyword argument assignment
+        self.user5 = User.objects.create_user(username = 'user5', email='user5@gmail.com', password = '', last_name = 't', first_name = 'm')
+                                                       ^ (bad-whitespace)
+C: 11, 0: No space allowed around keyword argument assignment
+        self.user5 = User.objects.create_user(username = 'user5', email='user5@gmail.com', password = '', last_name = 't', first_name = 'm')
+                                                                                                    ^ (bad-whitespace)
+C: 11, 0: No space allowed around keyword argument assignment
+        self.user5 = User.objects.create_user(username = 'user5', email='user5@gmail.com', password = '', last_name = 't', first_name = 'm')
+                                                                                                                    ^ (bad-whitespace)
+C: 11, 0: No space allowed around keyword argument assignment
+        self.user5 = User.objects.create_user(username = 'user5', email='user5@gmail.com', password = '', last_name = 't', first_name = 'm')
+                                                                                                                                      ^ (bad-whitespace)
+C: 12, 0: Line too long (294/100) (line-too-long)
+C: 12, 0: No space allowed around keyword argument assignment
+        self.user8 = User.objects.create_user(username = 'user8', email = 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wwwwwwwwwwwwwwwwwwwwwwwwwwww.com',  password = 'temporary', last_name = 't', first_name = 'm')
+                                                       ^ (bad-whitespace)
+C: 12, 0: No space allowed around keyword argument assignment
+        self.user8 = User.objects.create_user(username = 'user8', email = 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wwwwwwwwwwwwwwwwwwwwwwwwwwww.com',  password = 'temporary', last_name = 't', first_name = 'm')
+                                                                        ^ (bad-whitespace)
+C: 12, 0: Exactly one space required after comma
+        self.user8 = User.objects.create_user(username = 'user8', email = 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wwwwwwwwwwwwwwwwwwwwwwwwwwww.com',  password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                         ^ (bad-whitespace)
+C: 12, 0: No space allowed around keyword argument assignment
+        self.user8 = User.objects.create_user(username = 'user8', email = 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wwwwwwwwwwwwwwwwwwwwwwwwwwww.com',  password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                     ^ (bad-whitespace)
+C: 12, 0: No space allowed around keyword argument assignment
+        self.user8 = User.objects.create_user(username = 'user8', email = 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wwwwwwwwwwwwwwwwwwwwwwwwwwww.com',  password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                                              ^ (bad-whitespace)
+C: 12, 0: No space allowed around keyword argument assignment
+        self.user8 = User.objects.create_user(username = 'user8', email = 'wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww@wwwwwwwwwwwwwwwwwwwwwwwwwwww.com',  password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                                                                ^ (bad-whitespace)
+C: 13, 0: Line too long (248/100) (line-too-long)
+C: 13, 0: No space allowed around keyword argument assignment
+        self.user23 = User.objects.create_user(username = 'user23', email='user5@gmail.com', password = 'gergeogogo3ht2rh20rh2rh23r83r23hr23r2398r9hwhehf23hr203rh203hgjkegf3034h0th34th34t834ht934t3gnkergn34gh34r', last_name = 't', first_name = 'm')
+                                                        ^ (bad-whitespace)
+C: 13, 0: No space allowed around keyword argument assignment
+        self.user23 = User.objects.create_user(username = 'user23', email='user5@gmail.com', password = 'gergeogogo3ht2rh20rh2rh23r83r23hr23r2398r9hwhehf23hr203rh203hgjkegf3034h0th34th34t834ht934t3gnkergn34gh34r', last_name = 't', first_name = 'm')
+                                                                                                      ^ (bad-whitespace)
+C: 13, 0: No space allowed around keyword argument assignment
+        self.user23 = User.objects.create_user(username = 'user23', email='user5@gmail.com', password = 'gergeogogo3ht2rh20rh2rh23r83r23hr23r2398r9hwhehf23hr203rh203hgjkegf3034h0th34th34t834ht934t3gnkergn34gh34r', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                ^ (bad-whitespace)
+C: 13, 0: No space allowed around keyword argument assignment
+        self.user23 = User.objects.create_user(username = 'user23', email='user5@gmail.com', password = 'gergeogogo3ht2rh20rh2rh23r83r23hr23r2398r9hwhehf23hr203rh203hgjkegf3034h0th34th34t834ht934t3gnkergn34gh34r', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                  ^ (bad-whitespace)
+C: 14, 0: Line too long (185/100) (line-too-long)
+C: 14, 0: No space allowed around keyword argument assignment
+        self.user12 = User.objects.create_user(username = 'temporary2@columbia.com', email = 'temporary2@columbia.com', last_name = 'temp', first_name = 'orary', password = 'temporary')
+                                                        ^ (bad-whitespace)
+C: 14, 0: No space allowed around keyword argument assignment
+        self.user12 = User.objects.create_user(username = 'temporary2@columbia.com', email = 'temporary2@columbia.com', last_name = 'temp', first_name = 'orary', password = 'temporary')
+                                                                                           ^ (bad-whitespace)
+C: 14, 0: No space allowed around keyword argument assignment
+        self.user12 = User.objects.create_user(username = 'temporary2@columbia.com', email = 'temporary2@columbia.com', last_name = 'temp', first_name = 'orary', password = 'temporary')
+                                                                                                                                  ^ (bad-whitespace)
+C: 14, 0: No space allowed around keyword argument assignment
+        self.user12 = User.objects.create_user(username = 'temporary2@columbia.com', email = 'temporary2@columbia.com', last_name = 'temp', first_name = 'orary', password = 'temporary')
+                                                                                                                                                       ^ (bad-whitespace)
+C: 14, 0: No space allowed around keyword argument assignment
+        self.user12 = User.objects.create_user(username = 'temporary2@columbia.com', email = 'temporary2@columbia.com', last_name = 'temp', first_name = 'orary', password = 'temporary')
+                                                                                                                                                                           ^ (bad-whitespace)
+C: 15, 0: Line too long (157/100) (line-too-long)
+C: 15, 0: No space allowed around keyword argument assignment
+        self.user13 = User.objects.create_user(username = 'invalid_email_address2', email='no at', password = 'temporary', last_name = 't', first_name = 'm')
+                                                        ^ (bad-whitespace)
+C: 15, 0: No space allowed around keyword argument assignment
+        self.user13 = User.objects.create_user(username = 'invalid_email_address2', email='no at', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                            ^ (bad-whitespace)
+C: 15, 0: No space allowed around keyword argument assignment
+        self.user13 = User.objects.create_user(username = 'invalid_email_address2', email='no at', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                     ^ (bad-whitespace)
+C: 15, 0: No space allowed around keyword argument assignment
+        self.user13 = User.objects.create_user(username = 'invalid_email_address2', email='no at', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                       ^ (bad-whitespace)
+C: 16, 0: Line too long (137/100) (line-too-long)
+C: 16, 0: No space allowed around keyword argument assignment
+        self.user14 = User.objects.create_user(username = 'user14', email=' ', password = 'temporary', last_name = 't', first_name = 'm')
+                                                        ^ (bad-whitespace)
+C: 16, 0: No space allowed around keyword argument assignment
+        self.user14 = User.objects.create_user(username = 'user14', email=' ', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                        ^ (bad-whitespace)
+C: 16, 0: No space allowed around keyword argument assignment
+        self.user14 = User.objects.create_user(username = 'user14', email=' ', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                 ^ (bad-whitespace)
+C: 16, 0: No space allowed around keyword argument assignment
+        self.user14 = User.objects.create_user(username = 'user14', email=' ', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                   ^ (bad-whitespace)
+C: 17, 0: Line too long (150/100) (line-too-long)
+C: 17, 0: No space allowed around keyword argument assignment
+        self.user15 = User.objects.create_user(username = ' ', email='user15@columbia.edu', password = 'temporary', last_name = 't', first_name = 'm')
+                                                        ^ (bad-whitespace)
+C: 17, 0: No space allowed around keyword argument assignment
+        self.user15 = User.objects.create_user(username = ' ', email='user15@columbia.edu', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                     ^ (bad-whitespace)
+C: 17, 0: No space allowed around keyword argument assignment
+        self.user15 = User.objects.create_user(username = ' ', email='user15@columbia.edu', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                              ^ (bad-whitespace)
+C: 17, 0: No space allowed around keyword argument assignment
+        self.user15 = User.objects.create_user(username = ' ', email='user15@columbia.edu', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                ^ (bad-whitespace)
+C: 18, 0: Line too long (143/100) (line-too-long)
+C: 18, 0: No space allowed around keyword argument assignment
+        self.user16 = User.objects.create_user(username = 'user16', email='user5@gmail.com', password = ' ', last_name = 't', first_name = 'm')
+                                                        ^ (bad-whitespace)
+C: 18, 0: No space allowed around keyword argument assignment
+        self.user16 = User.objects.create_user(username = 'user16', email='user5@gmail.com', password = ' ', last_name = 't', first_name = 'm')
+                                                                                                      ^ (bad-whitespace)
+C: 18, 0: No space allowed around keyword argument assignment
+        self.user16 = User.objects.create_user(username = 'user16', email='user5@gmail.com', password = ' ', last_name = 't', first_name = 'm')
+                                                                                                                       ^ (bad-whitespace)
+C: 18, 0: No space allowed around keyword argument assignment
+        self.user16 = User.objects.create_user(username = 'user16', email='user5@gmail.com', password = ' ', last_name = 't', first_name = 'm')
+                                                                                                                                         ^ (bad-whitespace)
+C: 19, 0: Line too long (306/100) (line-too-long)
+C: 19, 0: No space allowed around keyword argument assignment
+        self.user19 = User.objects.create_user(username = 'user19', email ='wfjwgh3409t3ggh4ohj4h045h04uh945hi4509hu409hu490hu490hu049h90j2oije2hr293 hrh23hr9023ur0923ur230hr2h092r023ur23rh23rh239hr2rh289h289rh2389h2389rh2rj2rh9wefwo32@gmail.com', password = 'temporary', last_name = 't', first_name = 'm')
+                                                        ^ (bad-whitespace)
+C: 19, 0: No space allowed before keyword argument assignment
+        self.user19 = User.objects.create_user(username = 'user19', email ='wfjwgh3409t3ggh4ohj4h045h04uh945hi4509hu409hu490hu490hu049h90j2oije2hr293 hrh23hr9023ur0923ur230hr2h092r023ur23rh23rh239hr2rh289h289rh2389h2389rh2rj2rh9wefwo32@gmail.com', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                          ^ (bad-whitespace)
+C: 19, 0: No space allowed around keyword argument assignment
+        self.user19 = User.objects.create_user(username = 'user19', email ='wfjwgh3409t3ggh4ohj4h045h04uh945hi4509hu409hu490hu490hu049h90j2oije2hr293 hrh23hr9023ur0923ur230hr2h092r023ur23rh23rh239hr2rh289h289rh2389h2389rh2rj2rh9wefwo32@gmail.com', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                                 ^ (bad-whitespace)
+C: 19, 0: No space allowed around keyword argument assignment
+        self.user19 = User.objects.create_user(username = 'user19', email ='wfjwgh3409t3ggh4ohj4h045h04uh945hi4509hu409hu490hu490hu049h90j2oije2hr293 hrh23hr9023ur0923ur230hr2h092r023ur23rh23rh239hr2rh289h289rh2389h2389rh2rj2rh9wefwo32@gmail.com', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                                                          ^ (bad-whitespace)
+C: 19, 0: No space allowed around keyword argument assignment
+        self.user19 = User.objects.create_user(username = 'user19', email ='wfjwgh3409t3ggh4ohj4h045h04uh945hi4509hu409hu490hu490hu049h90j2oije2hr293 hrh23hr9023ur0923ur230hr2h092r023ur23rh23rh239hr2rh289h289rh2389h2389rh2rj2rh9wefwo32@gmail.com', password = 'temporary', last_name = 't', first_name = 'm')
+                                                                                                                                                                                                                                                                                                            ^ (bad-whitespace)
+C: 33, 0: Trailing whitespace (trailing-whitespace)
+C: 41, 0: Trailing whitespace (trailing-whitespace)
+C: 47, 0: Trailing whitespace (trailing-whitespace)
+C: 52, 0: Trailing whitespace (trailing-whitespace)
+C: 53, 0: Trailing whitespace (trailing-whitespace)
+C: 57, 0: Trailing whitespace (trailing-whitespace)
+C: 60, 0: Trailing whitespace (trailing-whitespace)
+C: 61, 0: Trailing whitespace (trailing-whitespace)
+C: 65, 0: Trailing whitespace (trailing-whitespace)
+C: 68, 0: Trailing whitespace (trailing-whitespace)
+C: 69, 0: Trailing whitespace (trailing-whitespace)
+C: 72, 0: Trailing whitespace (trailing-whitespace)
+C: 74, 0: Trailing whitespace (trailing-whitespace)
+C: 75, 0: Trailing whitespace (trailing-whitespace)
+C: 78, 0: Trailing whitespace (trailing-whitespace)
+C: 79, 0: Trailing whitespace (trailing-whitespace)
+C: 82, 0: Trailing whitespace (trailing-whitespace)
+C: 83, 0: Trailing whitespace (trailing-whitespace)
+C: 86, 0: Trailing whitespace (trailing-whitespace)
+C: 87, 0: Trailing whitespace (trailing-whitespace)
+C: 90, 0: Trailing whitespace (trailing-whitespace)
+C: 91, 0: Trailing whitespace (trailing-whitespace)
+C: 94, 0: Trailing whitespace (trailing-whitespace)
+C: 95, 0: Trailing whitespace (trailing-whitespace)
+C: 97, 0: Line too long (171/100) (line-too-long)
+C: 98, 0: Trailing whitespace (trailing-whitespace)
+C: 99, 0: Trailing whitespace (trailing-whitespace)
+C:103, 0: Trailing whitespace (trailing-whitespace)
+C:106, 0: Trailing whitespace (trailing-whitespace)
+C:107, 0: Trailing whitespace (trailing-whitespace)
+C:111, 0: Trailing whitespace (trailing-whitespace)
+C:112, 0: Trailing whitespace (trailing-whitespace)
+C:113, 0: Trailing whitespace (trailing-whitespace)
+C:114, 0: Trailing whitespace (trailing-whitespace)
+C:115, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+C: 21, 8: Invalid attribute name "c" (invalid-name)
+C:  6, 0: Missing class docstring (missing-docstring)
+R:  6, 0: Too many instance attributes (14/7) (too-many-instance-attributes)
+C: 23, 4: Missing method docstring (missing-docstring)
+W: 26, 8: String statement has no effect (pointless-string-statement)
+W: 28, 8: String statement has no effect (pointless-string-statement)
+W: 30, 8: String statement has no effect (pointless-string-statement)
+C: 34, 4: Missing method docstring (missing-docstring)
+E: 46,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+E: 52,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 54, 4: Invalid method name "test_user_invalid_email_address1" (invalid-name)
+C: 54, 4: Missing method docstring (missing-docstring)
+C: 58, 4: Invalid method name "test_user_invalid_email_address2" (invalid-name)
+C: 58, 4: Missing method docstring (missing-docstring)
+C: 62, 4: Missing method docstring (missing-docstring)
+C: 66, 4: Missing method docstring (missing-docstring)
+C: 70, 4: Missing method docstring (missing-docstring)
+E: 73,26: Undefined variable 'excClass' (undefined-variable)
+E: 73,36: Undefined variable 'callableObj' (undefined-variable)
+E: 76, 4: method already defined line 70 (function-redefined)
+C: 76, 4: Missing method docstring (missing-docstring)
+C: 80, 4: Missing method docstring (missing-docstring)
+C: 84, 4: Missing method docstring (missing-docstring)
+C: 88, 4: Missing method docstring (missing-docstring)
+C: 92, 4: Missing method docstring (missing-docstring)
+C: 96, 4: Missing method docstring (missing-docstring)
+C:100, 4: Missing method docstring (missing-docstring)
+C:104, 4: Missing method docstring (missing-docstring)
+C:108, 4: Missing method docstring (missing-docstring)
+W: 24, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 35, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 44, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 50, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 55, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 59, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 63, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 67, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 71, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 77, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 81, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 85, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 89, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 93, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W: 97, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W:101, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W:105, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+W:109, 8: Attribute 'login' defined outside __init__ (attribute-defined-outside-init)
+************* Module test_singup
+C:  9, 0: Line too long (106/100) (line-too-long)
+C: 11, 0: Trailing whitespace (trailing-whitespace)
+C: 13, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+C:  8, 8: Invalid attribute name "c" (invalid-name)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 13, 4: Missing method docstring (missing-docstring)
+C: 20, 4: Missing method docstring (missing-docstring)
+C: 24, 4: Missing method docstring (missing-docstring)
+E: 26,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+************* Module test_views
+C:  8, 0: Line too long (103/100) (line-too-long)
+C:  1, 0: Missing module docstring (missing-docstring)
+C:  9, 8: Invalid attribute name "c" (invalid-name)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 13, 4: Missing method docstring (missing-docstring)
+C: 20, 4: Missing method docstring (missing-docstring)
+C: 24, 4: Missing method docstring (missing-docstring)
+E: 26,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+************* Module test_views_post_delete
+C:  9, 0: Line too long (106/100) (line-too-long)
+C: 13, 0: Trailing whitespace (trailing-whitespace)
+C: 14, 0: Line too long (120/100) (line-too-long)
+C: 16, 0: Line too long (127/100) (line-too-long)
+C: 19, 0: Line too long (237/100) (line-too-long)
+C: 25, 0: Trailing whitespace (trailing-whitespace)
+C: 26, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info1)
+                                                         ^ (bad-whitespace)
+C: 29, 0: Trailing whitespace (trailing-whitespace)
+C: 30, 0: No space allowed around keyword argument assignment
+        query = Product.objects.get(name = "Intro to algorithm", price = 200)
+                                         ^ (bad-whitespace)
+C: 30, 0: No space allowed around keyword argument assignment
+        query = Product.objects.get(name = "Intro to algorithm", price = 200)
+                                                                       ^ (bad-whitespace)
+C: 31, 0: Trailing whitespace (trailing-whitespace)
+C: 35, 0: Trailing whitespace (trailing-whitespace)
+C: 39, 0: Trailing whitespace (trailing-whitespace)
+C: 40, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info3)
+                                                         ^ (bad-whitespace)
+C: 43, 0: Trailing whitespace (trailing-whitespace)
+C: 44, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db negative price", price = -100).exists())
+                                                     ^ (bad-whitespace)
+C: 44, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db negative price", price = -100).exists())
+                                                                                  ^ (bad-whitespace)
+C: 49, 0: Trailing whitespace (trailing-whitespace)
+C: 50, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info3)
+                                                         ^ (bad-whitespace)
+C: 53, 0: Trailing whitespace (trailing-whitespace)
+C: 54, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db2", price = -10).exists())
+                                                     ^ (bad-whitespace)
+C: 54, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db2", price = -10).exists())
+                                                                    ^ (bad-whitespace)
+C: 60, 0: Trailing whitespace (trailing-whitespace)
+C: 61, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info4)
+                                                         ^ (bad-whitespace)
+C: 64, 0: Trailing whitespace (trailing-whitespace)
+C: 65, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db3", price = 10).exists())
+                                                     ^ (bad-whitespace)
+C: 65, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db3", price = 10).exists())
+                                                                    ^ (bad-whitespace)
+C: 66, 0: Trailing whitespace (trailing-whitespace)
+C: 70, 0: Trailing whitespace (trailing-whitespace)
+C: 71, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info5)
+                                                         ^ (bad-whitespace)
+C: 74, 0: Trailing whitespace (trailing-whitespace)
+C: 75, 0: Trailing whitespace (trailing-whitespace)
+C: 75, 0: No space allowed around keyword argument assignment
+        self.assertTrue(Product.objects.filter(name = "db3", price = 10).exists())   
+                                                    ^ (bad-whitespace)
+C: 75, 0: No space allowed around keyword argument assignment
+        self.assertTrue(Product.objects.filter(name = "db3", price = 10).exists())   
+                                                                   ^ (bad-whitespace)
+C: 76, 0: Trailing whitespace (trailing-whitespace)
+C: 80, 0: Trailing whitespace (trailing-whitespace)
+C: 81, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info6)
+                                                         ^ (bad-whitespace)
+C: 84, 0: Trailing whitespace (trailing-whitespace)
+C: 85, 0: Trailing whitespace (trailing-whitespace)
+C: 85, 0: Line too long (223/100) (line-too-long)
+C: 85, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "egeorgeorgjeorgjeogjeorgjerogjeoigjeogjoejfo2jro23rongoengoengoerjgeogjeogjeogjeogjeogjeogjeogeogjeogjeogjeogjeojgoejgoejgoerjerogjerogjeogjeo", price = 100).exists())     
+                                                     ^ (bad-whitespace)
+C: 85, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "egeorgeorgjeorgjeogjeorgjerogjeoigjeogjoejfo2jro23rongoengoengoerjgeogjeogjeogjeogjeogjeogjeogeogjeogjeogjeogjeojgoejgoejgoerjerogjerogjeogjeo", price = 100).exists())     
+                                                                                                                                                                                                               ^ (bad-whitespace)
+C: 86, 0: Trailing whitespace (trailing-whitespace)
+C: 88, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info2)
+                                                         ^ (bad-whitespace)
+C: 91, 0: Trailing whitespace (trailing-whitespace)
+C: 92, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name = "db", price = 100)
+                                     ^ (bad-whitespace)
+C: 92, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name = "db", price = 100)
+                                                   ^ (bad-whitespace)
+C: 93, 0: No space allowed around keyword argument assignment
+        self.assertTrue(Product.objects.filter(name = "db").exists())
+                                                    ^ (bad-whitespace)
+C: 95, 0: Trailing whitespace (trailing-whitespace)
+C: 99, 0: Trailing whitespace (trailing-whitespace)
+C:100, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "db").exists())
+                                                     ^ (bad-whitespace)
+C:101, 0: Trailing whitespace (trailing-whitespace)
+C:103, 0: No space allowed around keyword argument assignment
+        request = self.factory.post('/polls/post/', data = self.product_info7)
+                                                         ^ (bad-whitespace)
+C:106, 0: Trailing whitespace (trailing-whitespace)
+C:107, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name = "abc", price = 200)
+                                     ^ (bad-whitespace)
+C:107, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name = "abc", price = 200)
+                                                    ^ (bad-whitespace)
+C:108, 0: No space allowed around keyword argument assignment
+        self.assertTrue(Product.objects.filter(name = "abc").exists())
+                                                    ^ (bad-whitespace)
+C:110, 0: Trailing whitespace (trailing-whitespace)
+C:114, 0: Trailing whitespace (trailing-whitespace)
+C:115, 0: Trailing whitespace (trailing-whitespace)
+C:115, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "abc").exists())    
+                                                     ^ (bad-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  4, 0: Unable to import 'polls.views' (import-error)
+E:  5, 0: Unable to import 'polls.models' (import-error)
+C: 10, 8: Invalid attribute name "c" (invalid-name)
+C:  7, 0: Missing class docstring (missing-docstring)
+R:  7, 0: Too many instance attributes (10/7) (too-many-instance-attributes)
+C: 22, 4: Missing method docstring (missing-docstring)
+E: 24,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 36, 4: Missing method docstring (missing-docstring)
+E: 38,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 46, 4: Missing method docstring (missing-docstring)
+E: 48,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 57, 4: Missing method docstring (missing-docstring)
+E: 59,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 67, 4: Missing method docstring (missing-docstring)
+E: 69,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 77, 4: Missing method docstring (missing-docstring)
+E: 79,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 87, 4: Missing method docstring (missing-docstring)
+C: 92, 8: Invalid variable name "q" (invalid-name)
+C:102, 4: Missing method docstring (missing-docstring)
+C:107, 8: Invalid variable name "q" (invalid-name)
+************* Module tests_product_add
+C:  8, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="only a test", price=100, description= "user1")
+                                                                         ^ (bad-whitespace)
+C: 11, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 18, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 25, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 32, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 39, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 46, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 54, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 61, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 65, 0: Trailing whitespace (trailing-whitespace)
+C: 66, 0: Trailing whitespace (trailing-whitespace)
+C: 68, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 75, 0: Exactly one space required around assignment
+        p=Product()
+         ^ (bad-whitespace)
+C: 80, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  3, 0: Unable to import 'polls.models' (import-error)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 10, 4: Missing method docstring (missing-docstring)
+C: 11, 8: Invalid variable name "p" (invalid-name)
+C: 17, 4: Missing method docstring (missing-docstring)
+C: 18, 8: Invalid variable name "p" (invalid-name)
+C: 24, 4: Missing method docstring (missing-docstring)
+C: 25, 8: Invalid variable name "p" (invalid-name)
+C: 31, 4: Missing method docstring (missing-docstring)
+C: 32, 8: Invalid variable name "p" (invalid-name)
+C: 38, 4: Missing method docstring (missing-docstring)
+C: 39, 8: Invalid variable name "p" (invalid-name)
+C: 45, 4: Missing method docstring (missing-docstring)
+C: 46, 8: Invalid variable name "p" (invalid-name)
+C: 53, 4: Missing method docstring (missing-docstring)
+C: 54, 8: Invalid variable name "p" (invalid-name)
+C: 60, 4: Missing method docstring (missing-docstring)
+C: 61, 8: Invalid variable name "p" (invalid-name)
+C: 67, 4: Missing method docstring (missing-docstring)
+C: 68, 8: Invalid variable name "p" (invalid-name)
+C: 74, 4: Missing method docstring (missing-docstring)
+C: 75, 8: Invalid variable name "p" (invalid-name)
+************* Module tests_product_add_nameoutofrange_fail
+C:  8, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="only a test", price=10, description= "user")
+                                                                        ^ (bad-whitespace)
+C:  9, 0: Trailing whitespace (trailing-whitespace)
+C: 11, 0: No space allowed before keyword argument assignment
+    def create_product(self, name="only a test1", price =100):
+                                                        ^ (bad-whitespace)
+C: 12, 0: Trailing whitespace (trailing-whitespace)
+C: 12, 0: Exactly one space required around assignment
+        p=Product()        
+         ^ (bad-whitespace)
+C: 14, 0: Exactly one space required after assignment
+        p.price =price
+                ^ (bad-whitespace)
+C: 18, 0: Line too long (232/100) (line-too-long)
+C: 18, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", price = 100)
+                                     ^ (bad-whitespace)
+C: 18, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", price = 100)
+                                                                                                                                                                                                                                  ^ (bad-whitespace)
+C: 20, 0: Line too long (245/100) (line-too-long)
+C: 20, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa").exists())
+                                                     ^ (bad-whitespace)
+C: 23, 0: Line too long (232/100) (line-too-long)
+C: 23, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", price = 200)
+                                     ^ (bad-whitespace)
+C: 23, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", price = 200)
+                                                                                                                                                                                                                                  ^ (bad-whitespace)
+C: 25, 0: Line too long (245/100) (line-too-long)
+C: 25, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa").exists())
+                                                     ^ (bad-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  3, 0: Unable to import 'polls.models' (import-error)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 11, 4: Missing method docstring (missing-docstring)
+C: 12, 8: Invalid variable name "p" (invalid-name)
+R: 11, 4: Method could be a function (no-self-use)
+C: 17, 4: Invalid method name "test_whatever_creation1_failrange" (invalid-name)
+C: 17, 4: Missing method docstring (missing-docstring)
+C: 18, 8: Invalid variable name "w" (invalid-name)
+C: 22, 4: Invalid method name "test_whatever_creation2_failrange" (invalid-name)
+C: 22, 4: Missing method docstring (missing-docstring)
+C: 23, 8: Invalid variable name "w" (invalid-name)
+************* Module tests_product_add_priceNegative_fail
+C:  8, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="only a test", price=10, description= "user")
+                                                                        ^ (bad-whitespace)
+C:  9, 0: Trailing whitespace (trailing-whitespace)
+C: 11, 0: No space allowed before keyword argument assignment
+    def create_product(self, name="only a test1", price =100):
+                                                        ^ (bad-whitespace)
+C: 12, 0: Trailing whitespace (trailing-whitespace)
+C: 12, 0: Exactly one space required around assignment
+        p=Product()        
+         ^ (bad-whitespace)
+C: 14, 0: Exactly one space required after assignment
+        p.price =price
+                ^ (bad-whitespace)
+C: 18, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test1", price = -100)
+                                     ^ (bad-whitespace)
+C: 18, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test1", price = -100)
+                                                             ^ (bad-whitespace)
+C: 20, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test1").exists())
+                                                     ^ (bad-whitespace)
+C: 23, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test2", price = -100000000000000000000)
+                                     ^ (bad-whitespace)
+C: 23, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test2", price = -100000000000000000000)
+                                                             ^ (bad-whitespace)
+C: 25, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test2").exists())
+                                                     ^ (bad-whitespace)
+C: 28, 0: Line too long (104/100) (line-too-long)
+C: 28, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test3", price = -100088888888888888888800000000000000000)
+                                     ^ (bad-whitespace)
+C: 28, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test3", price = -100088888888888888888800000000000000000)
+                                                             ^ (bad-whitespace)
+C: 30, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test3").exists())
+                                                     ^ (bad-whitespace)
+C: 34, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test4", price = -0.000001)
+                                     ^ (bad-whitespace)
+C: 34, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test4", price = -0.000001)
+                                                             ^ (bad-whitespace)
+C: 36, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test4").exists())
+                                                     ^ (bad-whitespace)
+C: 40, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test5", price = -1 )
+                                     ^ (bad-whitespace)
+C: 40, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test5", price = -1 )
+                                                             ^ (bad-whitespace)
+C: 40, 0: No space allowed before bracket
+        w = self.create_product(name = "only a test5", price = -1 )
+                                                                  ^ (bad-whitespace)
+C: 42, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test5").exists())
+                                                     ^ (bad-whitespace)
+C: 45, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test6", price = -0.000000000000000001 )
+                                     ^ (bad-whitespace)
+C: 45, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test6", price = -0.000000000000000001 )
+                                                             ^ (bad-whitespace)
+C: 45, 0: No space allowed before bracket
+        w = self.create_product(name = "only a test6", price = -0.000000000000000001 )
+                                                                                     ^ (bad-whitespace)
+C: 47, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test6").exists())
+                                                     ^ (bad-whitespace)
+C: 50, 0: Line too long (123/100) (line-too-long)
+C: 50, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test7", price = -0.0000000000000000000000000000000000003434324234324324234 )
+                                     ^ (bad-whitespace)
+C: 50, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test7", price = -0.0000000000000000000000000000000000003434324234324324234 )
+                                                             ^ (bad-whitespace)
+C: 50, 0: No space allowed before bracket
+        w = self.create_product(name = "only a test7", price = -0.0000000000000000000000000000000000003434324234324324234 )
+                                                                                                                          ^ (bad-whitespace)
+C: 52, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test7").exists())
+                                                     ^ (bad-whitespace)
+C: 55, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test8", price = -3.434324234324324234 )
+                                     ^ (bad-whitespace)
+C: 55, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test8", price = -3.434324234324324234 )
+                                                             ^ (bad-whitespace)
+C: 55, 0: No space allowed before bracket
+        w = self.create_product(name = "only a test8", price = -3.434324234324324234 )
+                                                                                     ^ (bad-whitespace)
+C: 57, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test8").exists())
+                                                     ^ (bad-whitespace)
+C: 62, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test9", price = -3434324234324324234 )
+                                     ^ (bad-whitespace)
+C: 62, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test9", price = -3434324234324324234 )
+                                                             ^ (bad-whitespace)
+C: 62, 0: No space allowed before bracket
+        w = self.create_product(name = "only a test9", price = -3434324234324324234 )
+                                                                                    ^ (bad-whitespace)
+C: 64, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test9").exists())
+                                                     ^ (bad-whitespace)
+C: 67, 0: Line too long (133/100) (line-too-long)
+C: 67, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test10", price = -3434324234324324234888888888888888888888888888888888888888888888888)
+                                     ^ (bad-whitespace)
+C: 67, 0: No space allowed around keyword argument assignment
+        w = self.create_product(name = "only a test10", price = -3434324234324324234888888888888888888888888888888888888888888888888)
+                                                              ^ (bad-whitespace)
+C: 69, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "only a test10").exists())
+                                                     ^ (bad-whitespace)
+C: 71, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Invalid module name "tests_product_add_priceNegative_fail" (invalid-name)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  3, 0: Unable to import 'polls.models' (import-error)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 11, 4: Missing method docstring (missing-docstring)
+C: 12, 8: Invalid variable name "p" (invalid-name)
+R: 11, 4: Method could be a function (no-self-use)
+C: 17, 4: Invalid method name "test_whatever_creation1_failrange" (invalid-name)
+C: 17, 4: Missing method docstring (missing-docstring)
+C: 18, 8: Invalid variable name "w" (invalid-name)
+C: 22, 4: Invalid method name "test_whatever_creation2_failrange" (invalid-name)
+C: 22, 4: Missing method docstring (missing-docstring)
+C: 23, 8: Invalid variable name "w" (invalid-name)
+C: 27, 4: Invalid method name "test_whatever_creation3_failrange" (invalid-name)
+C: 27, 4: Missing method docstring (missing-docstring)
+C: 28, 8: Invalid variable name "w" (invalid-name)
+C: 33, 4: Invalid method name "test_whatever_creation4_failrange" (invalid-name)
+C: 33, 4: Missing method docstring (missing-docstring)
+C: 34, 8: Invalid variable name "w" (invalid-name)
+C: 39, 4: Invalid method name "test_whatever_creation5_failrange" (invalid-name)
+C: 39, 4: Missing method docstring (missing-docstring)
+C: 40, 8: Invalid variable name "w" (invalid-name)
+C: 44, 4: Invalid method name "test_whatever_creation6_failrange" (invalid-name)
+C: 44, 4: Missing method docstring (missing-docstring)
+C: 45, 8: Invalid variable name "w" (invalid-name)
+C: 49, 4: Invalid method name "test_whatever_creation7_failrange" (invalid-name)
+C: 49, 4: Missing method docstring (missing-docstring)
+C: 50, 8: Invalid variable name "w" (invalid-name)
+C: 54, 4: Invalid method name "test_whatever_creation8_failrange" (invalid-name)
+C: 54, 4: Missing method docstring (missing-docstring)
+C: 55, 8: Invalid variable name "w" (invalid-name)
+C: 61, 4: Invalid method name "test_whatever_creation9_failrange" (invalid-name)
+C: 61, 4: Missing method docstring (missing-docstring)
+C: 62, 8: Invalid variable name "w" (invalid-name)
+C: 66, 4: Invalid method name "test_whatever_creation10_failrange" (invalid-name)
+C: 66, 4: Missing method docstring (missing-docstring)
+C: 67, 8: Invalid variable name "w" (invalid-name)
+************* Module tests_product_delete
+C:  8, 0: Line too long (123/100) (line-too-long)
+C:  8, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to computer system", price=100, description= "user1", username = "user1")
+                                                                                             ^ (bad-whitespace)
+C:  8, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to computer system", price=100, description= "user1", username = "user1")
+                                                                                                                 ^ (bad-whitespace)
+C:  9, 0: Line too long (115/100) (line-too-long)
+C:  9, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to database", price=200, description= "user2",username = "user2")
+                                                                                      ^ (bad-whitespace)
+C:  9, 0: Exactly one space required after comma
+        Product.objects.create(name="Introduction to database", price=200, description= "user2",username = "user2")
+                                                                                               ^ (bad-whitespace)
+C:  9, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to database", price=200, description= "user2",username = "user2")
+                                                                                                         ^ (bad-whitespace)
+C: 10, 0: Line too long (118/100) (line-too-long)
+C: 10, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to algorithms", price=300, description= "user3", username = "user3")
+                                                                                        ^ (bad-whitespace)
+C: 10, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to algorithms", price=300, description= "user3", username = "user3")
+                                                                                                            ^ (bad-whitespace)
+C: 11, 0: Line too long (124/100) (line-too-long)
+C: 11, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to computer science", price=400, description= "user4", username = "user4")
+                                                                                              ^ (bad-whitespace)
+C: 11, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to computer science", price=400, description= "user4", username = "user4")
+                                                                                                                  ^ (bad-whitespace)
+C: 12, 0: Line too long (124/100) (line-too-long)
+C: 12, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to operating system", price=500, description= "user5", username = "user5")
+                                                                                              ^ (bad-whitespace)
+C: 12, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to operating system", price=500, description= "user5", username = "user5")
+                                                                                                                  ^ (bad-whitespace)
+C: 13, 0: Line too long (123/100) (line-too-long)
+C: 13, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to computer network", price=600, description= "user6",username = "user6")
+                                                                                              ^ (bad-whitespace)
+C: 13, 0: Exactly one space required after comma
+        Product.objects.create(name="Introduction to computer network", price=600, description= "user6",username = "user6")
+                                                                                                       ^ (bad-whitespace)
+C: 13, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to computer network", price=600, description= "user6",username = "user6")
+                                                                                                                 ^ (bad-whitespace)
+C: 14, 0: Line too long (117/100) (line-too-long)
+C: 14, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to UI design", price=700, description= "user7", username = "user7")
+                                                                                       ^ (bad-whitespace)
+C: 14, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to UI design", price=700, description= "user7", username = "user7")
+                                                                                                           ^ (bad-whitespace)
+C: 15, 0: Line too long (124/100) (line-too-long)
+C: 15, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to machine learning", price=800, description= "user8", username = "user8")
+                                                                                              ^ (bad-whitespace)
+C: 15, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to machine learning", price=800, description= "user8", username = "user8")
+                                                                                                                  ^ (bad-whitespace)
+C: 16, 0: Line too long (128/100) (line-too-long)
+C: 16, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to software engineering", price=900, description= "user9", username = "user9")
+                                                                                                  ^ (bad-whitespace)
+C: 16, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to software engineering", price=900, description= "user9", username = "user9")
+                                                                                                                      ^ (bad-whitespace)
+C: 17, 0: Line too long (123/100) (line-too-long)
+C: 17, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to data science", price=1000, description= "user10", username = "user10")
+                                                                                           ^ (bad-whitespace)
+C: 17, 0: No space allowed around keyword argument assignment
+        Product.objects.create(name="Introduction to data science", price=1000, description= "user10", username = "user10")
+                                                                                                                ^ (bad-whitespace)
+C: 18, 0: Trailing whitespace (trailing-whitespace)
+C: 20, 0: No space allowed before bracket
+    def test_delete_product1 (self):
+                             ^ (bad-whitespace)
+C: 21, 0: Trailing whitespace (trailing-whitespace)
+C: 21, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to computer system")    
+                                    ^ (bad-whitespace)
+C: 23, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 23, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 24, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to computer system").exists())
+                                                     ^ (bad-whitespace)
+C: 27, 0: No space allowed before bracket
+    def test_delete_product2 (self):
+                             ^ (bad-whitespace)
+C: 28, 0: Trailing whitespace (trailing-whitespace)
+C: 28, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to database")    
+                                    ^ (bad-whitespace)
+C: 30, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 30, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 31, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to database").exists())
+                                                     ^ (bad-whitespace)
+C: 34, 0: No space allowed before bracket
+    def test_delete_product3 (self):
+                             ^ (bad-whitespace)
+C: 35, 0: Trailing whitespace (trailing-whitespace)
+C: 35, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to algorithms")    
+                                    ^ (bad-whitespace)
+C: 37, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 37, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 38, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to algorithms").exists())
+                                                     ^ (bad-whitespace)
+C: 40, 0: No space allowed before bracket
+    def test_delete_product4 (self):
+                             ^ (bad-whitespace)
+C: 41, 0: Trailing whitespace (trailing-whitespace)
+C: 41, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to computer science")    
+                                    ^ (bad-whitespace)
+C: 43, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 43, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 44, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to computer science").exists())
+                                                     ^ (bad-whitespace)
+C: 46, 0: No space allowed before bracket
+    def test_delete_product5 (self):
+                             ^ (bad-whitespace)
+C: 47, 0: Trailing whitespace (trailing-whitespace)
+C: 47, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to operating system")    
+                                    ^ (bad-whitespace)
+C: 49, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 49, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 50, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to operating system").exists())
+                                                     ^ (bad-whitespace)
+C: 53, 0: No space allowed before bracket
+    def test_delete_product6 (self):
+                             ^ (bad-whitespace)
+C: 54, 0: Trailing whitespace (trailing-whitespace)
+C: 54, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to computer network")    
+                                    ^ (bad-whitespace)
+C: 56, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 56, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 57, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to computer network").exists())
+                                                     ^ (bad-whitespace)
+C: 59, 0: No space allowed before bracket
+    def test_delete_product7 (self):
+                             ^ (bad-whitespace)
+C: 60, 0: Trailing whitespace (trailing-whitespace)
+C: 60, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to UI design")    
+                                    ^ (bad-whitespace)
+C: 62, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 62, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 63, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to UI design").exists())
+                                                     ^ (bad-whitespace)
+C: 66, 0: No space allowed before bracket
+    def test_delete_product8 (self):
+                             ^ (bad-whitespace)
+C: 67, 0: Trailing whitespace (trailing-whitespace)
+C: 67, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to machine learning")    
+                                    ^ (bad-whitespace)
+C: 69, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 69, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 70, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to machine learning").exists())
+                                                     ^ (bad-whitespace)
+C: 72, 0: No space allowed before bracket
+    def test_delete_product9 (self):
+                             ^ (bad-whitespace)
+C: 73, 0: Trailing whitespace (trailing-whitespace)
+C: 73, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to software engineering")    
+                                    ^ (bad-whitespace)
+C: 75, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 75, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 76, 0: Line too long (104/100) (line-too-long)
+C: 76, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to software engineering").exists())
+                                                     ^ (bad-whitespace)
+C: 78, 0: No space allowed before bracket
+    def test_delete_product10 (self):
+                              ^ (bad-whitespace)
+C: 79, 0: Trailing whitespace (trailing-whitespace)
+C: 79, 0: No space allowed after keyword argument assignment
+        w = Product.objects.get(name= "Introduction to data science")    
+                                    ^ (bad-whitespace)
+C: 81, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                     ^ (bad-whitespace)
+C: 81, 0: No space allowed around keyword argument assignment
+        Product.deleteProduct(myName = w.name, user_name = w.username)
+                                                         ^ (bad-whitespace)
+C: 82, 0: No space allowed around keyword argument assignment
+        self.assertFalse(Product.objects.filter(name = "Introduction to data science").exists())
+                                                     ^ (bad-whitespace)
+C: 84, 0: Trailing whitespace (trailing-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  3, 0: Unable to import 'polls.models' (import-error)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 20, 4: Missing method docstring (missing-docstring)
+C: 21, 8: Invalid variable name "w" (invalid-name)
+C: 27, 4: Missing method docstring (missing-docstring)
+C: 28, 8: Invalid variable name "w" (invalid-name)
+C: 34, 4: Missing method docstring (missing-docstring)
+C: 35, 8: Invalid variable name "w" (invalid-name)
+C: 40, 4: Missing method docstring (missing-docstring)
+C: 41, 8: Invalid variable name "w" (invalid-name)
+C: 46, 4: Missing method docstring (missing-docstring)
+C: 47, 8: Invalid variable name "w" (invalid-name)
+C: 53, 4: Missing method docstring (missing-docstring)
+C: 54, 8: Invalid variable name "w" (invalid-name)
+C: 59, 4: Missing method docstring (missing-docstring)
+C: 60, 8: Invalid variable name "w" (invalid-name)
+C: 66, 4: Missing method docstring (missing-docstring)
+C: 67, 8: Invalid variable name "w" (invalid-name)
+C: 72, 4: Missing method docstring (missing-docstring)
+C: 73, 8: Invalid variable name "w" (invalid-name)
+C: 78, 4: Missing method docstring (missing-docstring)
+C: 79, 8: Invalid variable name "w" (invalid-name)
+************* Module tests_product_name
+C:  8, 0: Line too long (105/100) (line-too-long)
+C:  8, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="which class is the most difficult", price=100, description= "user1")
+                                                                                               ^ (bad-whitespace)
+C:  9, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to database", price=200, description= "user2")
+                                                                                      ^ (bad-whitespace)
+C: 10, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to algorithms", price=300, description= "user3")
+                                                                                        ^ (bad-whitespace)
+C: 11, 0: Line too long (104/100) (line-too-long)
+C: 11, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to computer science", price=400, description= "user4")
+                                                                                              ^ (bad-whitespace)
+C: 12, 0: Line too long (104/100) (line-too-long)
+C: 12, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to operating system", price=500, description= "user5")
+                                                                                              ^ (bad-whitespace)
+C: 13, 0: Line too long (104/100) (line-too-long)
+C: 13, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to computer network", price=600, description= "user6")
+                                                                                              ^ (bad-whitespace)
+C: 14, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to UI design", price=700, description= "user7")
+                                                                                       ^ (bad-whitespace)
+C: 15, 0: Line too long (104/100) (line-too-long)
+C: 15, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to machine learning", price=800, description= "user8")
+                                                                                              ^ (bad-whitespace)
+C: 16, 0: Line too long (108/100) (line-too-long)
+C: 16, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to software engineering", price=900, description= "user9")
+                                                                                                  ^ (bad-whitespace)
+C: 17, 0: Line too long (102/100) (line-too-long)
+C: 17, 0: No space allowed after keyword argument assignment
+        Product.objects.create(name="Introduction to data science", price=1000, description= "user10")
+                                                                                           ^ (bad-whitespace)
+C: 18, 0: Trailing whitespace (trailing-whitespace)
+C: 20, 0: Trailing whitespace (trailing-whitespace)
+C: 21, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "which class is the most difficult", price =100)
+                                    ^ (bad-whitespace)
+C: 21, 0: No space allowed before keyword argument assignment
+        q = Product.objects.get(name= "which class is the most difficult", price =100)
+                                                                                 ^ (bad-whitespace)
+C: 22, 0: Trailing whitespace (trailing-whitespace)
+C: 23, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "which class is the most difficult")
+                               ^ (bad-whitespace)
+C: 25, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  100)
+                                ^ (bad-whitespace)
+C: 30, 0: Trailing whitespace (trailing-whitespace)
+C: 31, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to database", price = 200)
+                                    ^ (bad-whitespace)
+C: 31, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to database", price = 200)
+                                                                        ^ (bad-whitespace)
+C: 32, 0: Trailing whitespace (trailing-whitespace)
+C: 33, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to database")
+                               ^ (bad-whitespace)
+C: 35, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  200)
+                                ^ (bad-whitespace)
+C: 39, 0: Trailing whitespace (trailing-whitespace)
+C: 40, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to algorithms", price = 300)
+                                    ^ (bad-whitespace)
+C: 40, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to algorithms", price = 300)
+                                                                          ^ (bad-whitespace)
+C: 41, 0: Trailing whitespace (trailing-whitespace)
+C: 42, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to algorithms")
+                               ^ (bad-whitespace)
+C: 44, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  300)
+                                ^ (bad-whitespace)
+C: 49, 0: Trailing whitespace (trailing-whitespace)
+C: 50, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to computer science", price = 400)
+                                    ^ (bad-whitespace)
+C: 50, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to computer science", price = 400)
+                                                                                ^ (bad-whitespace)
+C: 51, 0: Trailing whitespace (trailing-whitespace)
+C: 52, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to computer science")
+                               ^ (bad-whitespace)
+C: 54, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  400)
+                                ^ (bad-whitespace)
+C: 59, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to operating system", price = 500)
+                                    ^ (bad-whitespace)
+C: 59, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to operating system", price = 500)
+                                                                                ^ (bad-whitespace)
+C: 60, 0: Trailing whitespace (trailing-whitespace)
+C: 61, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to operating system")
+                               ^ (bad-whitespace)
+C: 63, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  500)
+                                ^ (bad-whitespace)
+C: 67, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to computer network", price = 600)
+                                    ^ (bad-whitespace)
+C: 67, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to computer network", price = 600)
+                                                                                ^ (bad-whitespace)
+C: 68, 0: Trailing whitespace (trailing-whitespace)
+C: 69, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to computer network")
+                               ^ (bad-whitespace)
+C: 71, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  600)
+                                ^ (bad-whitespace)
+C: 74, 0: Trailing whitespace (trailing-whitespace)
+C: 75, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to UI design", price = 700)
+                                    ^ (bad-whitespace)
+C: 75, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to UI design", price = 700)
+                                                                         ^ (bad-whitespace)
+C: 76, 0: Trailing whitespace (trailing-whitespace)
+C: 77, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to UI design")
+                               ^ (bad-whitespace)
+C: 79, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  700)
+                                ^ (bad-whitespace)
+C: 82, 0: Trailing whitespace (trailing-whitespace)
+C: 83, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to machine learning", price = 800)
+                                    ^ (bad-whitespace)
+C: 83, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to machine learning", price = 800)
+                                                                                ^ (bad-whitespace)
+C: 84, 0: Trailing whitespace (trailing-whitespace)
+C: 85, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to machine learning")
+                               ^ (bad-whitespace)
+C: 87, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  800)
+                                ^ (bad-whitespace)
+C: 90, 0: Trailing whitespace (trailing-whitespace)
+C: 91, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to software engineering", price = 900)
+                                    ^ (bad-whitespace)
+C: 91, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to software engineering", price = 900)
+                                                                                    ^ (bad-whitespace)
+C: 92, 0: Trailing whitespace (trailing-whitespace)
+C: 93, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to software engineering")
+                               ^ (bad-whitespace)
+C: 95, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  900)
+                                ^ (bad-whitespace)
+C: 98, 0: Trailing whitespace (trailing-whitespace)
+C: 99, 0: No space allowed after keyword argument assignment
+        q = Product.objects.get(name= "Introduction to data science", price = 1000)
+                                    ^ (bad-whitespace)
+C: 99, 0: No space allowed around keyword argument assignment
+        q = Product.objects.get(name= "Introduction to data science", price = 1000)
+                                                                            ^ (bad-whitespace)
+C:100, 0: Trailing whitespace (trailing-whitespace)
+C:101, 0: Exactly one space required after comma
+        self.assertEqual(q.name,  "Introduction to data science")
+                               ^ (bad-whitespace)
+C:103, 0: Exactly one space required after comma
+        self.assertEqual(q.price,  1000)
+                                ^ (bad-whitespace)
+C:105, 0: Trailing newlines (trailing-newlines)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  3, 0: Unable to import 'polls.models' (import-error)
+C:  6, 0: Missing class docstring (missing-docstring)
+C: 19, 4: Missing method docstring (missing-docstring)
+C: 21, 8: Invalid variable name "q" (invalid-name)
+C: 29, 4: Missing method docstring (missing-docstring)
+C: 31, 8: Invalid variable name "q" (invalid-name)
+C: 38, 4: Missing method docstring (missing-docstring)
+C: 40, 8: Invalid variable name "q" (invalid-name)
+C: 48, 4: Missing method docstring (missing-docstring)
+C: 50, 8: Invalid variable name "q" (invalid-name)
+C: 58, 4: Missing method docstring (missing-docstring)
+C: 59, 8: Invalid variable name "q" (invalid-name)
+C: 66, 4: Missing method docstring (missing-docstring)
+C: 67, 8: Invalid variable name "q" (invalid-name)
+C: 74, 4: Missing method docstring (missing-docstring)
+C: 75, 8: Invalid variable name "q" (invalid-name)
+C: 82, 4: Missing method docstring (missing-docstring)
+C: 83, 8: Invalid variable name "q" (invalid-name)
+C: 90, 4: Missing method docstring (missing-docstring)
+C: 91, 8: Invalid variable name "q" (invalid-name)
+E: 98, 4: method already defined line 90 (function-redefined)
+C: 98, 4: Missing method docstring (missing-docstring)
+C: 99, 8: Invalid variable name "q" (invalid-name)
+************* Module tests_teardown
+C: 11, 0: Line too long (106/100) (line-too-long)
+C:  1, 0: Missing module docstring (missing-docstring)
+E:  4, 0: Unable to import 'polls.views' (import-error)
+E:  5, 0: Unable to import 'polls.models' (import-error)
+C:  7, 0: Missing class docstring (missing-docstring)
+C: 20, 4: Missing method docstring (missing-docstring)
+E: 22,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+C: 24, 4: Missing method docstring (missing-docstring)
+E: 26,25: Instance of 'WSGIRequest' has no 'status_code' member (no-member)
+W:  3, 0: Unused RequestFactory imported from django.test.client (unused-import)
+W:  4, 0: Unused delete imported from polls.views (unused-import)
+W:  4, 0: Unused post imported from polls.views (unused-import)
+W:  5, 0: Unused Product imported from polls.models (unused-import)
+R:  1, 0: Similar lines in 2 files
+==tests_product_add_nameoutofrange_fail:0
+==tests_product_add_priceNegative_fail:0
+from django.test import TestCase
+
+from polls.models import Product
+
+
+class ProductTestCase(TestCase):
+    def setUp(self):
+        Product.objects.create(name="only a test", price=10, description= "user")
+
+
+    def create_product(self, name="only a test1", price =100):
+        p=Product()
+        p.name = name
+        p.price =price
+        return p
+
+    def test_whatever_creation1_failrange(self): (duplicate-code)
+R:  1, 0: Similar lines in 2 files
+==test_views_post_delete:0
+==tests_teardown:0
+from django.test import TestCase, Client
+from django.contrib.auth.models import User
+from django.test.client import RequestFactory
+from polls.views import post, delete
+from polls.models import Product
+ (duplicate-code)
+
+
+Report
+======
+485 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |10     |10         |=          |0.00        |10.00    |
++---------+-------+-----------+-----------+------------+---------+
+|class    |10     |10         |=          |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |89     |89         |=          |14.61       |15.73    |
++---------+-------+-----------+-----------+------------+---------+
+|function |0      |0          |=          |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+External dependencies
+---------------------
+::
+
+    django 
+      \-contrib 
+      | \-auth 
+      |   \-models (test_login,test_views_post_delete,tests_teardown,test_views,test_singup)
+      \-test (tests_product_add_priceNegative_fail,tests_teardown,test_views,tests_product_delete,test_views_post_delete,tests_product_add_nameoutofrange_fail,tests_product_name,test_singup,test_login,tests_product_add)
+        \-client (test_views_post_delete,tests_teardown)
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |492    |72.04 |492      |=          |
++----------+-------+------+---------+-----------+
+|docstring |5      |0.73  |5        |=          |
++----------+-------+------+---------+-----------+
+|comment   |7      |1.02  |7        |=          |
++----------+-------+------+---------+-----------+
+|empty     |179    |26.21 |179      |=          |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |23    |23       |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |3.418 |3.418    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |574    |574      |=          |
++-----------+-------+---------+-----------+
+|refactor   |6      |6        |=          |
++-----------+-------+---------+-----------+
+|warning    |25     |25       |=          |
++-----------+-------+---------+-----------+
+|error      |25     |25       |=          |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++--------------------------------------+------+--------+---------+-----------+
+|module                                |error |warning |refactor |convention |
++======================================+======+========+=========+===========+
+|test_views_post_delete                |32.00 |0.00    |16.67    |12.89      |
++--------------------------------------+------+--------+---------+-----------+
+|test_login                            |20.00 |84.00   |16.67    |21.08      |
++--------------------------------------+------+--------+---------+-----------+
+|tests_teardown                        |16.00 |16.00   |33.33    |0.87       |
++--------------------------------------+------+--------+---------+-----------+
+|tests_product_name                    |8.00  |0.00    |0.00     |17.25      |
++--------------------------------------+------+--------+---------+-----------+
+|tests_product_add_priceNegative_fail  |4.00  |0.00    |16.67    |13.94      |
++--------------------------------------+------+--------+---------+-----------+
+|tests_product_add_nameoutofrange_fail |4.00  |0.00    |16.67    |4.53       |
++--------------------------------------+------+--------+---------+-----------+
+|tests_product_delete                  |4.00  |0.00    |0.00     |20.38      |
++--------------------------------------+------+--------+---------+-----------+
+|tests_product_add                     |4.00  |0.00    |0.00     |6.27       |
++--------------------------------------+------+--------+---------+-----------+
+|test_singup                           |4.00  |0.00    |0.00     |1.57       |
++--------------------------------------+------+--------+---------+-----------+
+|test_views                            |4.00  |0.00    |0.00     |1.22       |
++--------------------------------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++-------------------------------+------------+
+|message id                     |occurrences |
++===============================+============+
+|bad-whitespace                 |263         |
++-------------------------------+------------+
+|trailing-whitespace            |103         |
++-------------------------------+------------+
+|missing-docstring              |96          |
++-------------------------------+------------+
+|invalid-name                   |65          |
++-------------------------------+------------+
+|line-too-long                  |46          |
++-------------------------------+------------+
+|attribute-defined-outside-init |18          |
++-------------------------------+------------+
+|no-member                      |12          |
++-------------------------------+------------+
+|import-error                   |9           |
++-------------------------------+------------+
+|unused-import                  |4           |
++-------------------------------+------------+
+|pointless-string-statement     |3           |
++-------------------------------+------------+
+|undefined-variable             |2           |
++-------------------------------+------------+
+|too-many-instance-attributes   |2           |
++-------------------------------+------------+
+|no-self-use                    |2           |
++-------------------------------+------------+
+|function-redefined             |2           |
++-------------------------------+------------+
+|duplicate-code                 |2           |
++-------------------------------+------------+
+|trailing-newlines              |1           |
++-------------------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -5.05/10 (previous run: -5.05/10, +0.00)
+
