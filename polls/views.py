@@ -22,7 +22,11 @@ def list(request):
 
 
 def homepagejson(request):
-    queryset = Product.objects.all()
+    category = request.GET.get('category')
+    if category is None:
+        queryset = Product.objects.all()
+    else:
+        queryset = Product.objects.filter(username=category)
     data = serializers.serialize("json", queryset)
     return HttpResponse(data, content_type='application/json')
 
@@ -129,6 +133,7 @@ def post(request):
             saved = True
         price = request.POST.get('price')
         description = request.POST.get('description')
+        category = request.POST.get('category')
         username = request.user.username
         for obj in Product.objects.all():
             p_name = obj.name

@@ -72,11 +72,10 @@
                 </h1>
 
             <div align="right" class="page-header">
-                <form role="form" action="{% url 'polls:homepagejson' %}" method="post" class="registration-form"> {% csrf_token %}
-                    <button type="submit" class="btn" name="book" >Books</button>
-                    <button type="submit" class="btn" name="furniture">Furniture</button>
-                    <button type="submit" class="btn" name="others">Others</button>
-                </form>
+                <button class="btn" name="all" onclick="start(null)">ALL</button>
+                <button class="btn" name="books" onclick="start('books')">Books</button>
+                <button class="btn" name="furniture" onclick="start('furniture')">Furniture</button>
+                <button class="btn" name="others" onclick="start('others')">Others</button>
             </div>
         </div>
 
@@ -108,48 +107,58 @@
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
 
     <script type="text/javascript">
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            var obj = JSON.parse(this.responseText);
-            for (i=0; i<obj.length; i++){
+        start(null);
+        function start(category){
+            $( ".platform" ).empty();
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                var obj = JSON.parse(this.responseText);
+                for (i=0; i<obj.length; i++){
 
-                var myUrl = obj[i].fields.url;
-                if (!myUrl) {
-                    myUrl = "http://placehold.it/700x400";
-                } else {
-                    myUrl = "/static" + myUrl;
+                    var myUrl = obj[i].fields.url;
+                    if (!myUrl) {
+                        myUrl = "http://placehold.it/700x400";
+                    } else {
+                        myUrl = "/static" + myUrl;
+                    }
+                    if (i % 3 == 0){
+                        $(".platform").append(
+                        "<div align='right' class='page-header'></div>"+
+                        "<div class=row"+i / 3+">"+
+                            "<div class='col-md-4 portfolio-item' id='product0'>"+
+                                 "<div class='page-header' >" + "</div>" +
+                                "<img class='img-responsive' style='width:200px;height:228px;' src='"+myUrl+"' alt='' '>"+
+                                "<h3>"+"Product Name: "+obj[i].fields.name+"</h3>"+
+                                "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                                "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                                "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                            "</div>"
+                        )
+                    }
+                    else{
+                        $(".row"+~~(i / 3)).append(
+                            "<div class='col-md-4 portfolio-item' id='product0'>"+
+                                "<div class='page-header' >" + "</div>" +
+                                "<img class='img-responsive' style='width:200px;height:228px;' src='"+myUrl+"' alt='' '>"+
+                                "<h3>"+"Product Name: "+obj[i].fields.name+"</h3>"+
+                                "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
+                                "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
+                                "<p>"+"Description: "+obj[i].fields.description+"</p>"+
+                            "</div>"
+                        )
+                    }
                 }
-                if (i % 3 == 0){
-                    $(".platform").append(
-                    "<div class=row"+i / 3+">"+
-                        "<div class='col-md-4 portfolio-item' id='product0'>"+
-                             "<div class='page-header' >" + "</div>" +
-                            "<img class='img-responsive' style='width:200px;height:228px;' src='"+myUrl+"' alt='' '>"+
-                            "<h3>"+"Product Name: "+obj[i].fields.name+"</h3>"+
-                            "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
-                            "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
-                            "<p>"+"Description: "+obj[i].fields.description+"</p>"+
-                        "</div>"
-                    )
-                }
-                else{
-                    $(".row"+~~(i / 3)).append(
-                        "<div class='col-md-4 portfolio-item' id='product0'>"+
-                            "<div class='page-header' >" + "</div>" +
-                            "<img class='img-responsive' style='width:200px;height:228px;' src='"+myUrl+"' alt='' '>"+
-                            "<h3>"+"Product Name: "+obj[i].fields.name+"</h3>"+
-                            "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
-                            "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
-                            "<p>"+"Description: "+obj[i].fields.description+"</p>"+
-                        "</div>"
-                    )
-                }
+              }
+            };
+            if (category == null){
+                xhttp.open("GET", "/polls/homepagejson", true);
             }
-          }
-        };
-        xhttp.open("GET", "/polls/homepagejson", true);
-        xhttp.send();
+            else {
+                xhttp.open("GET", "/polls/homepagejson"+"?category="+category, true);
+            }
+            xhttp.send();
+        }
     </script>
 
 </body>
