@@ -21,6 +21,8 @@ class Product(models.Model):
             return None
         if (len(self.name) > 30 or len(self.description) > 30):
             return None
+        if (self.category not in ["books", "furniture", "others"]):
+            return None
         self.save()
 
 
