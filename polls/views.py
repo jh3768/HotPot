@@ -9,7 +9,6 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib import messages
 from django.forms.models import model_to_dict
 from django.core import serializers
-#from polls.models import Product 
 from polls.models import Product, Image
 from .forms import UploadFileForm 
 
