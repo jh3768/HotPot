@@ -109,10 +109,10 @@ def post(request):
         description = request.POST.get('description')
         category = request.POST.get('category')
         username = request.user.username
-        for obj in Product.objects.all():
-            p_name = obj.name
-            if name == p_name:
-                return redirect('/polls/profile')
+
+        if (Product.checkDuplicateProduct(name) == True):
+            return redirect('/polls/profile')
+               
         product = Product(name=name, username=username, price=price,\
                              description=description, category=category)
         if  url == 'not upload':

@@ -37,6 +37,13 @@ class Product(models.Model):
         self.description = my_description
         self.save()
 
+    def checkDuplicateProduct(name):
+        for obj in Product.objects.all():
+            p_name = obj.name
+            if name == p_name:
+                return True
+        return False
+
     def __str__(self):
         return self.name
 
