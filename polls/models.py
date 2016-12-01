@@ -1,13 +1,11 @@
+''' module model to interface db and controller '''
 from __future__ import unicode_literals
-
 from django.db import models
 from django import forms
-from django.utils import timezone
-import datetime
 
 # Create your models here.
-
 class Product(models.Model):
+    ''' Product class for all products '''
     name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     price = models.FloatField(default=0)
@@ -15,66 +13,45 @@ class Product(models.Model):
     url = models.CharField(max_length=200)
     category = models.CharField(max_length=100)
 
-    ''' add Product to db'''
     def addProduct(self):
-        if ((float)(self.price) < 0 or (float)(self.price) > 1000000):
+        ''' add Product to db'''
+        if (float)(self.price) < 0 or (float)(self.price) > 1000000:
             return None
-        if (len(self.name) > 30 or len(self.description) > 30):
+        if len(self.name) > 30 or len(self.description) > 30:
             return None
-        if (self.category != "books"):
+        if self.category not in ["books", "furniture", "others"]:
             return None
         self.save()
 
+    def deleteProduct(self):
+        ''' delete Product from db'''
+        self.delete()
 
-    def deleteProduct(myName, user_name):
-        try:
-            p = Product.objects.get(name=myName, username = user_name)
-        except Product.DoesNotExist:
-            p = None
-        if p:
-            p.delete()
-        else: 
-            msg = "does not exists"
-            print (msg)
-
-
-    def updateProduct(myName, myPrice, myDescription ):
-        try:
-            p = Product.objects.get(name=myName)
-        except Product.DoesNotExist:
-            p= None
-        if p:
-            p.price = myPrice
-            p.description = myDescription
-            p.save()
-        else: 
-            msg = "does not exists"
-            print (msg)
-
-          
+    def updateProduct(self, my_price, my_description):
+        ''' update Product from db'''
+        if (float)(my_price) < 0 or (float)(my_price) > 1000000:
+            return None
+        if len(my_description) > 30:
+            return None
+        self.price = my_price
+        self.description = my_description
+        self.save()
 
     def __str__(self):
         return self.name
-    
-    
+
+
 class ImageForm(forms.Form):
-    """Image upload form."""
-    name = forms.CharField(max_length = 100)
+    """ Image upload form."""
+    name = forms.CharField(max_length=100)
     image = forms.ImageField()
-        
-    
+
+
 class Image(models.Model):
-    #path = models.CharField(max_length = 300)
-    name = models.CharField(max_length = 30)
+    ''' Image upload '''
+    name = models.CharField(max_length=30)
     pic = models.ImageField()
 
-    def addImage(self): 
+    def addImage(self):
+        ''' add image to db '''
         self.save()
-    
-#     class Meta:
-#         db_table = "image"
-#      
-
-        
-
-
