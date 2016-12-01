@@ -1,0 +1,18 @@
+after the fix, we have majority of the problems fixed, and the remaining warnings come from the sample django code.
+
+fabfile.py passed all static check 10/10
+
+forms.py passed all static check 10/10
+
+urls.py passed majority of static check, and the remaining warnings come from the sample django code.
+C:  6, 0: Invalid constant name "app_name" (invalid-name)
+C:  7, 0: Invalid constant name "urlpatterns" (invalid-name)
+
+views.py passed majority of static check.
+C: 98, 8: Invalid variable name "MyImageForm" (invalid-name)
+
+models.py passed majority of static check.
+C: 16, 4: Invalid method name "addProduct" (invalid-name)
+C: 26, 4: Invalid method name "deleteProduct" (invalid-name)
+C: 30, 4: Invalid method name "updateProduct" (invalid-name)
+C: 55, 4: Invalid method name "addImage" (invalid-name)
