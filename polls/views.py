@@ -99,11 +99,8 @@ def post(request):
         name = request.POST.get('name')
         url = 'not upload'
         if MyImageForm.is_valid():
-            picture = Image()
-            picture.name = name
-            picture.pic = MyImageForm.cleaned_data["pic"]
-            url = picture.pic.url
-            picture.save()
+            picture = Image(name = name, pic = MyImageForm.cleaned_data["pic"])
+            url = picture.getUrl()
             picture.addImage()
         price = request.POST.get('price')
         description = request.POST.get('description')

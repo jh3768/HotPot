@@ -62,3 +62,6 @@ class Image(models.Model):
     def addImage(self):
         ''' add image to db '''
         self.save()
+
+    def getUrl(self):
+        return self.pic.url
