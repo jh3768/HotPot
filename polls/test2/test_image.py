@@ -11,7 +11,7 @@ class SimpleTest(TestCase):
 
         img.name = "test3"
 
-        img.pic = SimpleUploadedFile(name='test3', content=open("polls/test2/test2.png", 'rb').read(), content_type='image/png')
+        img.pic = SimpleUploadedFile(name='test3', content=open("polls/test2/test3.png", 'rb').read(), content_type='image/png')
         #p = Image.objects.get(name='test2').pic.path
         #self.failUnless(open(p), 'file not found')
 
