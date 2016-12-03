@@ -9,18 +9,18 @@ class SimpleTest(TestCase):
     def test_basic_addition(self):
         img = Image()
 
-        img.name = "test3"
+        img.name = "test_image"
 
-        img.pic = SimpleUploadedFile(name='test3', content=open("polls/test2/test2.png", 'rb').read(), content_type='image/png')
+        img.pic = SimpleUploadedFile(name='test_image', content=open("polls/test2/test_image.png", 'rb').read(), content_type='image/png')
         #p = Image.objects.get(name='test2').pic.path
         #self.failUnless(open(p), 'file not found')
 
         #img.pic = File(open("polls/static/media/php.jpeg"))
         img.addImage()
 
-        self.assertTrue(Image.objects.filter(name='test3').exists())
+        self.assertTrue(Image.objects.filter(name='test_image').exists())
 
     def tearDown(self):
-        Image.objects.get(name='test3').delete()
+        Image.objects.get(name='test_image').delete()
 
 
