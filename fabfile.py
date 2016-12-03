@@ -15,7 +15,7 @@ def test():
 def commit():
     ''' run test before commit '''
     test()
-    local("git add -p && git commit")
+    local("git commit -am 'Test CI' ")
 
 def push():
     ''' run test before push '''
