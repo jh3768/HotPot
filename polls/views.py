@@ -8,7 +8,7 @@ from django.contrib.auth import logout as auth_logout
 from django.contrib import messages
 from django.core import serializers
 from polls.models import Product, Image
-from .forms import UploadFileForm
+from polls.forms import UploadFileForm
 
 def homepage(request):
     ''' render homepage'''
@@ -96,6 +96,7 @@ def post(request):
     ''' post product'''
     if request.user.username and request.method == 'POST':
         MyImageForm = UploadFileForm(request.POST, request.FILES)
+        print (request.POST)
         name = request.POST.get('name')
         url = 'not upload'
         if MyImageForm.is_valid():
