@@ -4,7 +4,7 @@ from polls.models import Product
 
 
 class ProductTestCase(TestCase):
-    def create_product(self, name="computer system", price =100, desciption = "user", category ="book"):
+    def create_product(self, name, price, desciption, category):
         p=Product()        
         p.name = name
         p.price =price
