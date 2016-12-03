@@ -1,0 +1,30 @@
+Component1 - Products (Back-end)
+Files: models.py , views.py
+Reader: Ziyi Mu
+Recorder: Jiamin Huang
+
+Potential Problems:
+
+Each Product has a primary id key that is defined by the database. However, when we want to get a product, we do not have information about the id. This Product key problem also affect editing and deleting of a Product. We cannot delete Products without the ability to get the specific object, nor we can edit the Product. 
+
+Method to solve:
+Currently, we used unique name in Product. The name attribute works as an identification of Product, so the users is not able to edit the name of Product, but this is not realistic and does not give users flexibilities on naming Product. 
+
+
+
+
+Component2 - Images (Back-end)
+Files: views.py,models.py 
+Reader: Zhimao Liu
+Recorder: Yanan Zhang
+
+Potential Problems:
+
+(1) If the user chooses to not upload an image when posting a Product, our system will not be able to add the posted Product dynamically on the front-end website. This is because the scheme we use automatically includes space for images. If there is no images, the Product is not be able to be shown on the schema.
+(2)Our current system cannot upload png format images sometime.(Fixed, previous version checked category in a wrong way)
+(3)We don’t limit the size of image uploaded. Potentially, the malicious users can fill the spaces of our database easily.
+
+Methods to solve:
+(1) Currently, we added a default picture for each Posted Product if there is no associate Image with the Product. This way, the front-end web will still look organized and does not cause any problem.
+(2) We are not very sure what causes this problem and it needs future investigations.
+(3) Limit the uploaded image size.
