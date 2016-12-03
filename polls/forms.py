@@ -10,3 +10,4 @@ class UploadFileForm(forms.Form):
     def getData(self, data):
     	mydata = self.cleaned_data[data]
     	return mydata
+        
