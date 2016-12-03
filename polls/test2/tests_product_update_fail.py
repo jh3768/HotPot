@@ -42,5 +42,17 @@ class SimpleTest(TestCase):
         self.assertEqual(p.price, 100)
         self.assertEqual(p.description, "user_fail")
 
+    def test_update_product_fail14(self):
+        p = Product()
+        p.name = "test_product_fail"
+        p.price = 100
+        p.description = "user_fail"
+        p.category= "books"    
+        p.addProduct()
+        self.assertTrue(Product.objects.filter(name="test_product_fail").exists())
+        p.updateProduct(my_price= 100, my_description= "user_fail3*8*************************************************************")
+        self.assertEqual(p.price, 100)
+        self.assertEqual(p.description, "user_fail")
+
     def tearDown(self):
         Product.objects.get(name="test_product_fail").delete()
