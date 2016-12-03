@@ -6,3 +6,7 @@ class UploadFileForm(forms.Form):
     name = forms.CharField(max_length=50)
     pic = forms.ImageField()
     
+
+    def getData(self, data):
+    	mydata = self.cleaned_data[data]
+    	return mydata

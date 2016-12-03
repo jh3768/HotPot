@@ -48,12 +48,6 @@ class Product(models.Model):
         return self.name
 
 
-class ImageForm(forms.Form):
-    """ Image upload form."""
-    name = forms.CharField(max_length=100)
-    image = forms.ImageField()
-
-
 class Image(models.Model):
     ''' Image upload '''
     name = models.CharField(max_length=30)
