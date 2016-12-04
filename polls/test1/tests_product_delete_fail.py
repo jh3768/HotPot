@@ -11,7 +11,7 @@ class ProductTestCase(TestCase):
         p.username = "user 1"
         p.category="books"
         self.assertFalse(Product.objects.filter(name = p.name).exists())
-        p.deleteProduct()
+        p.deleteProduct(p.name, p.username)
      
 
 

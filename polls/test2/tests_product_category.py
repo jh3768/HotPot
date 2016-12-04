@@ -13,9 +13,9 @@ class ProductTestCase(TestCase):
         return p
 
     def test_category_fail(self):
-        w = self.create_product(name = "computer system", price = 100, desciption= "nothing", category="shoes")
+        w = self.create_product(name="computer system", price=100, desciption="nothing", category="shoes")
         w.addProduct()
-        self.assertFalse(Product.objects.filter(name = "computer system").exists())
+        self.assertFalse(Product.objects.filter(name="computer system").exists())
 
    
 

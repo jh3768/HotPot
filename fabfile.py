@@ -2,17 +2,16 @@
 from __future__ import with_statement
 from fabric.api import local, settings, abort
 from fabric.contrib.console import confirm
-from sys import stderr
 
 def test():
     ''' run test suite '''
     with settings(warn_only=True):
-        result = local('python3 manage.py test polls/test2', capture=True)
+        result = local('python manage.py test polls/test2', capture=True)
     if result.succeeded:
-        print (result.stderr)
         print("All tests passed !")
     if result.failed and not confirm("Tests failed. Continue anyway?"):
         abort("Aborting at user request.")
+
 
 def commit():
     ''' run test before commit '''
@@ -22,6 +21,7 @@ def commit():
 
 
 def pull():
+    ''' make working dir up-to-date'''
     local("git pull")
 
 

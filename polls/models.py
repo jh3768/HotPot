@@ -1,7 +1,6 @@
 ''' module model to interface db and controller '''
 from __future__ import unicode_literals
 from django.db import models
-from django import forms
 
 # Create your models here.
 class Product(models.Model):
@@ -23,24 +22,39 @@ class Product(models.Model):
             return None
         self.save()
 
-    def deleteProduct(self):
+    @staticmethod
+    def deleteProduct(name, username):
         ''' delete Product from db'''
-        self.delete()
+        try:
+            product = Product.objects.get(name=name, username=username)
+        except:
+            product = None
+        if product:
+            product.delete()
 
-    def updateProduct(self, my_price, my_description):
+    @staticmethod
+    def updateProduct(name, username, my_price, my_description):
         ''' update Product from db'''
         if (float)(my_price) < 0 or (float)(my_price) > 1000000:
             return None
         if len(my_description) > 30:
             return None
-        self.price = my_price
-        self.description = my_description
-        self.save()
+        try:
+            product = Product.objects.get(name=name, username=username)
+        except:
+            product = None
+        if product:
+            product.price = my_price
+            product.description = my_description
+            product.save()
 
-    def checkDuplicateProduct(name):
+    @staticmethod
+    def checkDuplicateProduct(name, username):
+        ''' check duplicate to ensure unique product name'''
         for obj in Product.objects.all():
             p_name = obj.name
-            if name == p_name:
+            u_name = obj.username
+            if name == p_name and username == u_name:
                 return True
         return False
 
@@ -58,4 +72,5 @@ class Image(models.Model):
         self.save()
 
     def getUrl(self):
+        ''' get image url'''
         return self.pic.url

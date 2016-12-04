@@ -96,21 +96,18 @@ def post(request):
     ''' post product'''
     if request.user.username and request.method == 'POST':
         MyImageForm = UploadFileForm(request.POST, request.FILES)
-        print (request.POST)
         name = request.POST.get('name')
         url = 'not upload'
         if MyImageForm.is_valid():
-            picture = Image(name = name, pic = MyImageForm.getData("pic"))
+            picture = Image(name=name, pic=MyImageForm.getData("pic"))
             url = picture.getUrl()
             picture.addImage()
         price = request.POST.get('price')
         description = request.POST.get('description')
         category = request.POST.get('category')
         username = request.user.username
-
-        if (Product.checkDuplicateProduct(name) == True):
+        if Product.checkDuplicateProduct(name, username):
             return redirect('/polls/profile')
-               
         product = Product(name=name, username=username, price=price,\
                              description=description, category=category)
         if  url == 'not upload':
@@ -132,16 +129,12 @@ def delete(request):
         name = request.POST.get('delete')
         user_name = request.user.username
         if name:
-            product = Product.objects.get(name=name, username=user_name)
-            if product is not None:
-                product.deleteProduct()
+            Product.deleteProduct(name, user_name)
         else:
             name = request.POST.get('name')
             price = request.POST.get('price')
             description = request.POST.get('description')
-            product = Product.objects.get(name=name, username=user_name)
-            if product is not None:
-                product.updateProduct(price, description)
+            Product.updateProduct(name, user_name, price, description)
         return redirect('/polls/profile')
     else:
         if request.user.username:

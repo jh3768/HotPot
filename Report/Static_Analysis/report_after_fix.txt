@@ -1,4 +1,6 @@
-After the fix, we have majority of the problems fixed, and the remaining warnings come from the sample django code.
+After the fix, we have majority of the problems fixed.
+Since the analyzing tool cannot check for library functions, it just absurdly product errors, we can simply ignore those.
+Also some remaining warnings come from the sample django code, we can also ignore those.
 
 
 
@@ -28,6 +30,9 @@ It passed majority of static check, and the remaining warnings come from variabl
 We added all the missing docstring, fixed style problems and removed used import and variables
 
 The remaining warnings are listed below, but they are trivial.
+E: 21,19: Class 'Product' has no 'objects' member (no-member)
+E: 23,19: Class 'Product' has no 'objects' member (no-member)
+E: 89,19: Class 'Product' has no 'objects' member (no-member)
 C: 98, 8: Invalid variable name "MyImageForm" (invalid-name)
 
 
@@ -37,7 +42,15 @@ It passed majority of static check, and the remaining warnings come from variabl
 We refactored the functions from static funtions to class methods, added all the missing docstring, fixed style problems and removed used import and variables. Also we removed unused if branches.
 
 The remaining warnings are listed below, but they are trivial.
-C: 16, 4: Invalid method name "addProduct" (invalid-name)
+C: 15, 4: Invalid method name "addProduct" (invalid-name)
 C: 26, 4: Invalid method name "deleteProduct" (invalid-name)
-C: 30, 4: Invalid method name "updateProduct" (invalid-name)
-C: 55, 4: Invalid method name "addImage" (invalid-name)
+W: 30, 8: No exception type(s) specified (bare-except)
+E: 29,22: Class 'Product' has no 'objects' member (no-member)
+C: 36, 4: Invalid method name "updateProduct" (invalid-name)
+W: 44, 8: No exception type(s) specified (bare-except)
+E: 43,22: Class 'Product' has no 'objects' member (no-member)
+C: 52, 4: Invalid method name "checkDuplicateProduct" (invalid-name)
+E: 54,19: Class 'Product' has no 'objects' member (no-member)
+C: 70, 4: Invalid method name "addImage" (invalid-name)
+C: 74, 4: Invalid method name "getUrl" (invalid-name)
+E: 76,15: Instance of 'ImageField' has no 'url' member (no-member)

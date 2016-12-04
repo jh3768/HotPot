@@ -5,10 +5,13 @@ Recorder: Jiamin Huang
 
 Potential Problems:
 
-Each Product has a primary id key that is defined by the database. However, when we want to get a product, we do not have information about the id. This Product key problem also affect editing and deleting of a Product. We cannot delete Products without the ability to get the specific object, nor we can edit the Product. 
+(1) Each Product has a primary id key that is defined by the database. However, when we want to get a product, we do not have information about the id. This Product key problem also affect editing and deleting of a Product. We cannot delete Products without the ability to get the specific object, nor we can edit the Product. 
+(2) For editing product we didn’t pass the username when calling the model to update the product, which causes user to update other’s product which has the same name.
 
 Method to solve:
-Currently, we used unique name in Product. The name attribute works as an identification of Product, so the users is not able to edit the name of Product, but this is not realistic and does not give users flexibilities on naming Product. 
+(1) Currently, we are using a unique name on Product. The name attribute works as an identification key of Product, so the users are not able to edit the name of a product, but it is not very practical and does not give users flexibility on naming Product. 
+(2) Fixed, we added a username parameter to guarantee a user will only access and change his own products.
+
 
 
 
@@ -26,5 +29,5 @@ Potential Problems:
 
 Methods to solve:
 (1) Currently, we added a default picture for each Posted Product if there is no associate Image with the Product. This way, the front-end web will still look organized and does not cause any problem.
-(2) We are not very sure what causes this problem and it needs future investigations.
+(2) We are not very sure what causes this problem and it needs future investigations. (Fixed, previous version checked category in a wrong way.)
 (3) Limit the uploaded image size.
