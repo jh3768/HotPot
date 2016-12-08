@@ -6,8 +6,9 @@ from fabric.contrib.console import confirm
 def test():
     ''' run test suite '''
     with settings(warn_only=True):
-        result = local('python manage.py test polls/test2', capture=True)
+        result = local('python3 manage.py test polls/test2', capture=True)
     if result.succeeded:
+        print (result.stderr)
         print("All tests passed !")
     if result.failed and not confirm("Tests failed. Continue anyway?"):
         abort("Aborting at user request.")
