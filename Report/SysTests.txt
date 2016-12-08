@@ -1,0 +1,69 @@
+Test Sign up
+(1) Click "Login/Sign Up" button at the navigation bar.
+(2) Fill "First name", "Last Name", "Email", "Password" to sign up
+
+Results:
+(1) The user can go to MyProfile section to upload Product once sign up successfully.
+(2) The user can use the same "Email", "Password" to sign in again in the future.
+(3) If the email account has already existed, the user cannot sign up successuflly.
+
+------
+
+Test Login
+(1) Click "Login/Sign Up" button at the navigation bar.
+(2) Fill the "Email", "Password" to log in.
+
+Results:
+(1) The user can go to MyProfile section to upload Product once log in successfully.
+(2) The user can use the same "Email", "Password" he/she signed up before to log in
+(3) If the email account is not existed, or the password is not related to the email, the user cannot log in.
+
+------
+
+
+Test Post Product.
+(1) Click "My Profile" at the navigation bar to go to the personalized page. (After login successfully).
+(2) Click "Post Product" to post a certain product.
+(3) Fill product name and price in the text box, the descriptions and images are optional.
+(4) Click "Post" button.
+
+Results:
+(1) The user can see the newly posted product information at both the My Profile section and the Homepage
+(2) If user doesn't upload any images, one default image will be displayed.
+
+
+------
+
+Test Delete Product.
+(1) The user can go to MyProfile section to delete Product once log in successfully.
+(2) Click "delete" button on the item you want to delete.
+
+Results:
+(1) After deleting a product, the product won't be displayed at the "My Profile" page and the Homepage.
+
+
+------
+
+Test Edit Product
+(1) The user can go to MyProfile section to edit Product once log in successfully.
+(2) Click "edit" button on the item you want to edit.
+(3) Enter/Modify the new information at the pop up text area.
+(4) Click "save" to save the changes.
+
+Results:
+(1) After editing/saving the product, the product will have newly updated information at both "My Profile" page and he Homepage
+
+------
+
+Test Log out
+(1) The user can log out once log in successfully.
+(2) Click log out button at the navigation bar.
+
+Results:
+(1) The user will be redirected to the Homepage after logging out.
+(2) The user cannot go back to the personalized "My Profile" section unless he/she log in again
+
+------
+
+
+

@@ -1,0 +1,13 @@
+Our website¡°HotPot¡±is to offer users an easy way to buy and sell their used products like used books and used furniture.
+In the demo we will show that a new user can sign up and login, then post products whatever they want for sell. And in the meanwhile others could see the product posted in the homepage including the contact info of the seller. We have created user-friendly interface with all the information as well as images shown on the homepage, and users could filter the products by category. Users could also manage all the products they have posted including editing products or deleting products if they have been sold.
+
+Like craiglist, we don't use our website to send emails to seller but want buyers to email sellers directly offline. The purpose of the website is more like a used product bulletin board for people to find whatever they want. 
+
+Our demo process include:
+
+1.Signup/Login
+2.Post some products in profile page
+3.See the posted products on homepage
+4.Edit and delete some products
+5.Logout and Login with another user
+6.Another user should do the same, and could also see the post made by previous user
