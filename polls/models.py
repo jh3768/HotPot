@@ -28,8 +28,7 @@ class Product(models.Model):
         try:
             product = Product.objects.get(name=name, username=username)
         except:
-            product = None
-            return product
+            return None
         if product:
             product.delete()
 
@@ -37,16 +36,13 @@ class Product(models.Model):
     def updateProduct(name, username, my_price, my_description):
         ''' update Product from db'''
         if (float)(my_price) < 0 or (float)(my_price) > 1000000:
-            product = None
-            return product
+            return None
         if len(my_description) > 30:
-            product = None
-            return product
+            return None
         try:
             product = Product.objects.get(name=name, username=username)
         except:
-            product = None
-            return product
+            return None
 
         if product:
             product.price = my_price
@@ -61,10 +57,8 @@ class Product(models.Model):
             p_name = obj.name
             u_name = obj.username
             if name == p_name and username == u_name:
-                status= True
                 return True
-        status= False
-        return status
+        return False
 
     def __str__(self):
         return self.name
