@@ -67,3 +67,7 @@ class ProductTestCase(TestCase):
         self.assertFalse(Product.objects.filter(name = "only a test10").exists())
 
     
+    def test_whatever_creation11_failrange(self):
+        w = self.create_product(name = "only a test11", price = 3434324234324324234888888888888888888888888888888888888888888888888)
+        w.addProduct()
+        self.assertFalse(Product.objects.filter(name = "only a test11").exists())

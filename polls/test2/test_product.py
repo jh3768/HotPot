@@ -9,12 +9,15 @@ class SimpleTest(TestCase):
         p = Product()
         p.name = "test_product"
         p.price = 100
-        p.description = "user1"
-        p.category= "books"    
+        p.description = "test1"
+        p.category= "books"
+        p.username = "user1"  
+        p.url = "static/media/index.png"  
         p.addProduct()
         self.assertTrue(Product.objects.filter(name="test_product").exists())
 
-    def tearDown(self):
-        Product.objects.get(name="test_product").delete()
+
+
+
 
 

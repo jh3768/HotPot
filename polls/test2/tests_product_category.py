@@ -17,6 +17,14 @@ class ProductTestCase(TestCase):
         w.addProduct()
         self.assertFalse(Product.objects.filter(name="computer system").exists())
 
+    def test_category_fail2(self):
+        p = Product()
+        p.name = "test_category"
+        p.category = "test_category"
+        p= p.addProduct()
+        self.assertEqual(p, None)
+
+
    
 
     

@@ -10,5 +10,9 @@ class ProductTestCase(TestCase):
     def test_delete_product (self):
         p = Product.objects.get(name= "Introduction to computer system test")    
         self.assertTrue(isinstance(p, Product))
-        p.deleteProduct(name="Introduction to computer system test", username="123@123")
+        Product.deleteProduct(name="Introduction to computer system test", username="123@123")
         self.assertFalse(Product.objects.filter(name = "Introduction to computer system test").exists())
+
+    def test_delete_product2 (self):
+        p= Product.deleteProduct(name="Introduction to computer system test1", username="123@123")
+        self.assertEqual(p, None)

@@ -29,6 +29,7 @@ class Product(models.Model):
             product = Product.objects.get(name=name, username=username)
         except:
             product = None
+            return product
         if product:
             product.delete()
 
@@ -36,17 +37,22 @@ class Product(models.Model):
     def updateProduct(name, username, my_price, my_description):
         ''' update Product from db'''
         if (float)(my_price) < 0 or (float)(my_price) > 1000000:
-            return None
+            product = None
+            return product
         if len(my_description) > 30:
-            return None
+            product = None
+            return product
         try:
             product = Product.objects.get(name=name, username=username)
         except:
             product = None
+            return product
+
         if product:
             product.price = my_price
             product.description = my_description
             product.save()
+            
 
     @staticmethod
     def checkDuplicateProduct(name, username):
@@ -55,8 +61,10 @@ class Product(models.Model):
             p_name = obj.name
             u_name = obj.username
             if name == p_name and username == u_name:
+                status= True
                 return True
-        return False
+        status= False
+        return status
 
     def __str__(self):
         return self.name

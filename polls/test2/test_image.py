@@ -6,7 +6,7 @@ from django.core.files import File
 import os
 
 
-class SimpleTest(TestCase):
+class SimpleTest2(TestCase):
 
     def setUp(self):
         self.img = Image()
@@ -19,9 +19,16 @@ class SimpleTest(TestCase):
         self.img2.addImage()
 
     def test_addImage(self):
-        
+        self.img = Image()
+        self.img.name = "test_image333"
         self.img.addImage()
-        self.assertTrue(Image.objects.filter(name='test_image1').exists())
+        self.assertTrue(Image.objects.filter(name='test_image333').exists())
+
+    def test_addImage2(self):
+        img = Image()
+        img.name = "test_image444"
+        img.addImage()
+        self.assertTrue(Image.objects.filter(name='test_image444').exists())
 
 
     def test_getUrl(self):

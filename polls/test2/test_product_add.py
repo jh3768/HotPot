@@ -14,7 +14,14 @@ class SimpleTest(TestCase):
         p.addProduct()
         self.assertTrue(Product.objects.filter(name="test_product").exists())
 
-    def tearDown(self):
-        Product.objects.get(name="test_product").delete()
+    def test_add_product2(self):
+        p = Product()
+        p.name = "test_others"
+        p.price = 100
+        p.description = "user1"
+        p.category= "others"    
+        p.addProduct()
+        self.assertTrue(Product.objects.filter(name="test_others").exists())
+
 
 
