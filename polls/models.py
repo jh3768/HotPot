@@ -1,5 +1,5 @@
 ''' module model to interface db and controller '''
-from __future__ import unicode_literals
+#from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
@@ -12,16 +12,14 @@ class Product(models.Model):
     url = models.CharField(max_length=200)
     category = models.CharField(max_length=100)
 
+
     def addProduct(self):
         ''' add Product to db'''
         if (float)(self.price) < 0 or (float)(self.price) > 1000000:
-            product = None
             return None
         if len(self.name) > 30 or len(self.description) > 30:
-            product = None
             return None
         if self.category not in ["books", "furniture", "others"]:
-            product = None
             return None
         self.save()
 
@@ -31,7 +29,6 @@ class Product(models.Model):
         try:
             product = Product.objects.get(name=name, username=username)
         except:
-            product = None
             return None
         if product:
             product.delete()
@@ -40,15 +37,12 @@ class Product(models.Model):
     def updateProduct(name, username, my_price, my_description):
         ''' update Product from db'''
         if (float)(my_price) < 0 or (float)(my_price) > 1000000:
-            product = None
             return None
         if len(my_description) > 30:
-            product = None
             return None
         try:
             product = Product.objects.get(name=name, username=username)
         except:
-            product = None
             return None
 
         if product:
@@ -65,10 +59,8 @@ class Product(models.Model):
             p_name = obj.name
             u_name = obj.username
             if name == p_name and username == u_name:
-                status = True
-                return status
-        status = False
-        return status
+                return True
+        return False
 
     def __str__(self):
         return self.name
