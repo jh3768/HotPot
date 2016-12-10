@@ -20,10 +20,10 @@ class ProductTestCase(TestCase):
         
     def test_whatever_creation2_failrange(self):
         w = self.create_product(name = "test_desciption", price = 200, category = "books", description="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-        w.addProduct()
-        self.assertFalse(Product.objects.filter(name = "test_description").exists())
+        p= w.addProduct()
+        self.assertEqual(p, None)
 
     def test_whatever_creation3_failrange(self):
         w = self.create_product(name = "test_category", price = 200, category = "shoes", description="test")
-        w.addProduct()
-        self.assertFalse(Product.objects.filter(name = "test_category").exists())
+        p = w.addProduct()
+        self.assertEqual(p, None)
