@@ -138,5 +138,6 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=polls',
     '--cover-html',
+   
     
 ]

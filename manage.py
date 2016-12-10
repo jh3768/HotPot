@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 import os
 import sys
+import coverage
 
 if __name__ == "__main__":
+    cov = coverage.Coverage()
+    #cov.erase()
+    cov.start()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Hotpot.settings")
     try:
         from django.core.management import execute_from_command_line
@@ -20,3 +24,6 @@ if __name__ == "__main__":
             )
         raise
     execute_from_command_line(sys.argv)
+    cov.stop()
+    cov.save()
+

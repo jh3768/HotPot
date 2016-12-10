@@ -2,6 +2,7 @@
 #import models
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
+from polls.views import user_exists
 
 class TestUser(TestCase):
     def setUp(self):
@@ -22,5 +23,21 @@ class TestUser(TestCase):
 
 
     def test_login_status(self):
-        response = self.c.get('/polls/profile/', follow=True)
+        response = self.c.get('/polls/login/', follow=True)
         self.assertEqual(response.status_code, 200)
+
+    def test_about_status(self):
+        response = self.c.get('/polls/about/', follow=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_homepage_status(self):
+        response = self.c.get('/polls/', follow=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_user_exists(self):
+        user = self.user
+        self.assertTrue(user_exists(user))
+
+    def test_user_not_exists(self):
+        user =  "mock"
+        self.assertFalse(user_exists(user))

@@ -24,3 +24,11 @@ class TestUser(TestCase):
     def test_signup_status(self):
         response = self.c.get('/polls/profile/', follow=True)
         self.assertEqual(response.status_code, 200)
+
+    def test_about_status(self):
+        response = self.c.get('/polls/about/', follow=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_homepage_status(self):
+        response = self.c.get('/polls/homepage/', follow=True)
+        self.assertEqual(response.status_code, 200)
