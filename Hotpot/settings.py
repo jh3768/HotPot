@@ -34,7 +34,9 @@ SECRET_KEY = '2@qcdxqbv+hk9lc#)&m^*d+^slse=3klairag&v2k2=&jk5)90'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=[]
+
+
 
 
 # Application definition
@@ -50,14 +52,16 @@ INSTALLED_APPS = [
     'django_nose',
 ]
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+MIDDLEWARE_CLASSES= [
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
+   
 ]
 
 ROOT_URLCONF = 'Hotpot.urls'
