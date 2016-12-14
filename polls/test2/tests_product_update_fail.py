@@ -1,8 +1,5 @@
 from django.test import TestCase
-
 from polls.models import Product
-
-
 
 class SimpleTest(TestCase):
     def setUp(self):
@@ -20,13 +17,11 @@ class SimpleTest(TestCase):
         p = Product.updateProduct(name="test_product_fail", username="123@123", my_price=-200, my_description="user_fail1")
         self.assertEqual(p, None)
     
-
     def test_update_product_fail12(self):
         self.assertTrue(Product.objects.filter(name="test_product_fail").exists())
         p = Product.objects.get(name="test_product_fail")
         p = Product.updateProduct(name="test_product_fail", username="123@123", my_price=-0.0000001, my_description="user_fail2")
         self.assertEqual(p, None)
-
 
     def test_update_product_fail13(self):
         self.assertTrue(Product.objects.filter(name="test_product_fail").exists())

@@ -19,10 +19,8 @@ class TestUser(TestCase):
         self.assertEqual(self.user.username, 'temporary@gmail.com')
         self.assertEqual(self.user.email, 'temporary@gmail.com')
 
-
     def test_user_auth(self):
         self.assertIn('_auth_user_id', self.c.session)
-
 
     def test_login_status(self):
         response = self.c.get('/polls/login/', follow=True)
@@ -93,9 +91,7 @@ class TestUser(TestCase):
         response = c.post('/polls/homepagejson?category=books')
         self.assertEqual(response.status_code, 200)
 
-
-    def test_profilejson(self):
-    
+    def test_profilejson(self):  
         request= self.c.post('/polls/post', data = self.product_info)
         request.user= self.user
         response= profilejson(request)
@@ -111,3 +107,5 @@ class TestUser(TestCase):
 
     def teardown(self):
         Product.objects.filter(name = "Intro to algorithm").delet()
+        User.objects.filter(username = 'temporary@gmail.com').delete()
+        User.objects.filter(username = 'temporary2@gmail.com').delete()

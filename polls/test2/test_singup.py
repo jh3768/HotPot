@@ -3,7 +3,6 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.test.client import RequestFactory
-from polls.views import post, delete
 from polls.models import Product
 from polls.views import auth_and_signup
 from django.contrib.sessions.middleware import SessionMiddleware
@@ -23,7 +22,6 @@ class TestUser(TestCase):
         self.assertTrue(self.login)
         self.assertEqual(self.user.username, 'temporary4@gmail.com')
         self.assertEqual(self.user.email, 'temporary4@gmail.com')
-
 
     def test_user_auth(self):
         self.assertIn('_auth_user_id', self.c.session)
@@ -56,7 +54,6 @@ class TestUser(TestCase):
         request.session.save()
         response = auth_and_signup(request)
         self.assertEqual(response.status_code, 302)
-
 
     def teardown(self):
         User.objects.filter(email = "temporary4@gmail.com").delete()

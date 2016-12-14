@@ -4,9 +4,8 @@ from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.test.client import RequestFactory
-from polls.views import post, delete
+from polls.views import post, delete, auth_and_login
 from polls.models import Product
-from polls.views import auth_and_login
 from django.contrib.sessions.middleware import SessionMiddleware 
 
 
@@ -39,8 +38,7 @@ class TestUser(TestCase):
         "test if the user has the same passowrd and username from signup"
         self.assertEqual(self.user1.username, 'temporary@gmail.com')
         self.assertEqual(self.user1.email, 'temporary@gmail.com')
-         
-         
+                
     def test_login_status1(self):
         "test if the above user is logged in"
         self.login = self.c.login(username='temporary@gmail.com', password='temporary')
@@ -65,4 +63,6 @@ class TestUser(TestCase):
         response= auth_and_login(request)
         self.assertEqual(response.status_code, 302)
          
-   
+    def teardown(self):
+        User.objects.filter(username = 'temporary@gmail.com').delete()
+        User.objects.filter(username = 'temporary1000@gmail.com').delete()

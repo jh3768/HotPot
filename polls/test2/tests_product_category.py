@@ -1,7 +1,5 @@
 from django.test import TestCase
-
 from polls.models import Product
-
 
 class ProductTestCase(TestCase):
     def create_product(self, name, price, desciption, category):

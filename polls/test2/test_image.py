@@ -1,20 +1,17 @@
 from django.test import TestCase
-
 from polls.models import Product, Image
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test.client import RequestFactory
 from django.core.files import File
-import os
 from polls.forms import UploadFileForm
+import os
 
 
 class SimpleTest2(TestCase):
-
     def setUp(self):
         self.img = Image()
         self.img.name = "test_image1"
         self.img.pic = SimpleUploadedFile(name=self.img.name, content=open("polls/test2/test_image.png", 'rb').read(), content_type='image/png')
-
         self.img2 = Image()
         self.img2.name = "test_image222"
         self.img2.pic = SimpleUploadedFile(name=self.img2.name, content=open("polls/test2/test_image.png", 'rb').read(), content_type='image/png')
@@ -34,15 +31,8 @@ class SimpleTest2(TestCase):
         img.addImage()
         self.assertTrue(Image.objects.filter(name='test_image444').exists())
 
-  
-      
-    
-
-
     def test_getUrl(self):
-
         self.assertEqual("/media/test_image222", self.img2.getUrl())
-
 
     def tearDown(self):
         Image.objects.get(name='test_image222').delete()
