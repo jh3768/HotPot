@@ -6,7 +6,8 @@ from django.contrib.auth import authenticate
 from django.test.client import RequestFactory
 from polls.views import post, delete
 from polls.models import Product
-from polls.views import auth_and_login 
+from polls.views import auth_and_login
+from django.contrib.sessions.middleware import SessionMiddleware 
 
 
 class TestUser(TestCase):
@@ -49,13 +50,19 @@ class TestUser(TestCase):
     def test_auth_and_login_status(self):
         "test if the above user is auth_and_login_"
         request = self.factory.post('/polls/login/', data = self.logininfo)
+        middleware = SessionMiddleware()
+        middleware.process_request(request)
+        request.session.save()
         response= auth_and_login(request)
-        #self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 302)
 
     def test_auth_and_login_status2(self):
         "test if the above user is auth_and_login_"
         request = self.factory.post('/polls/login/', data = self.logininfo2)
-        #auth_and_login(request)
-        #self.assertEqual(response.status_code, 302)
+        middleware = SessionMiddleware()
+        middleware.process_request(request)
+        request.session.save()
+        response= auth_and_login(request)
+        self.assertEqual(response.status_code, 302)
          
    
