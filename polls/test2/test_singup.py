@@ -32,13 +32,13 @@ class TestUser(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_auth_and_signup_status(self):
-        "test if the above user is auth_and_login_"
+        "test if the above user is auth_and_signup_"
         request = self.factory.post('/polls/login/', data = self.singupinfo)
         response= auth_and_signup(request)
         self.assertEqual(response.status_code, 302)
 
     def test_auth_and_signup_status2(self):
-        "test if the above user is auth_and_login_"
+        "test if the above user is auth_and_signup_"
         request = self.factory.post('/polls/login/', data = self.singupinfo2)
         middleware = SessionMiddleware()
         middleware.process_request(request)
@@ -47,7 +47,7 @@ class TestUser(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_auth_and_signup_status3(self):
-        "test if the above user is auth_and_login_"
+        "test if the above user is auth_and_signup_"
         request = self.factory.post('/polls/login/', data = self.singupinfo3)
         middleware = SessionMiddleware()
         middleware.process_request(request)
