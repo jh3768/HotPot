@@ -156,18 +156,18 @@
                             "<p>"+"Description: "+obj[i].fields.description+"</p>"+
                             "<form action="+"{% url 'polls:delete' %}"+" method='post' >"+
                             "{% csrf_token %}"+
-                            "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
+                            "<button name='delete' type='submit' value="+"'"+obj[i].fields.name+"'"+">Delete</button>"+
                             "<button type='button' onclick='showEditForm(" + i + ")'>Edit</button>"+
                             "</form>"+
                             "<form action="+"{% url 'polls:delete' %}"+" method='post' style='display: none;' id='EditForm" + i + "'>"+
                             "{% csrf_token %}"+
-                            "<input type = hidden id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                            "<input type = hidden id='name' class='input' name='name' type='text' value="+"'"+obj[i].fields.name+"'"+ "><br/>"+
                             "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
                             "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
                             "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
-                            "<input id='description' class='input' name='description' type='text' value="+obj[i].fields.description
+                            "<input id='description' class='input' name='description' type='text' value="+"'"+obj[i].fields.description+"'"
                             + "><br/>"+
-                            "<button name='edit' type='submit' value="+obj[i].fields.name+">edit</button>"+ "<br/>"+
+                            "<button name='edit' type='submit' value="+"'"+obj[i].fields.name+"'"+">edit</button>"+ "<br/>"+
                             "</form>"+
                         "</div>"
                     )
@@ -183,18 +183,18 @@
                             "<p>"+"Description: "+obj[i].fields.description+"</p>"+
                             "<form action="+"{% url 'polls:delete' %}"+" method='post'>"+
                             "{% csrf_token %}"+
-                            "<button name='delete' type='submit' value="+obj[i].fields.name+">Delete</button>"+
+                            "<button name='delete' type='submit' value="+"'"+obj[i].fields.name+"'"+">Delete</button>"+
                             "<button type='button' onclick='showEditForm(" + i + ")' >Edit</button>"+
                             "</form>"+
                              "<form action="+"{% url 'polls:delete' %}"+" method='post' style='display: none;' id='EditForm" + i + "'>"+
                             "{% csrf_token %}"+
-                            "<input type= hidden id='name' class='input' name='name' type='text' value="+obj[i].fields.name+ "><br/>"+
+                            "<input type= hidden id='name' class='input' name='name' type='text' value="+"'"+obj[i].fields.name+"'"+ "><br/>"+
                             "<label for='price'>"+"Product price: "+"</label>"+"<br/>"+
                             "<input id='price' class='input' name='price' type='int' value="+obj[i].fields.price+ "><br/>"+
                             "<label for='description'>"+"Product discription: "+"</label>"+"<br/>"+
-                            "<input id='description' class='input' name='description' type='text' value="+obj[i].fields.description
-                            + "><br/>"+
-                            "<button name='edit' type='submit' value="+obj[i].fields.name+">edit</button>"+ "<br/>"+
+                            "<input id='description' class='input' name='description' type='text' value="+"'"+obj[i].fields.description
+                            +"'"+ "><br/>"+
+                            "<button name='edit' type='submit' value="+"'"+obj[i].fields.name+"'"+">edit</button>"+ "<br/>"+
                             "</form>"+
                         "</div>"
                     )
