@@ -6,7 +6,7 @@ from fabric.contrib.console import confirm
 def test():
     ''' run test suite '''
     with settings(warn_only=True):
-        result = local('python3 manage.py test polls/test2', capture=True)
+        result = local('"C:\\Program Files\\Python\\python" manage.py test polls/test2', capture=True)
     if result.succeeded:
         print (result.stderr)
         print("All tests passed !")
@@ -40,4 +40,4 @@ def prepare_deploy():
 def deploy():
     ''' run test before deployment '''
     test()
-    local('python3 manage.py runserver')
+    local('"C:\\Program Files\\Python\\python" manage.py runserver')
