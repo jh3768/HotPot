@@ -107,6 +107,7 @@ def post(request):
         category = request.POST.get('category')
         username = request.user.username
         if Product.checkDuplicateProduct(name, username):
+            messages.add_message(request, messages.INFO, 'Try another product name', 'dup', True)
             return redirect('/polls/profile')
         product = Product(name=name, username=username, price=price,\
                              description=description, category=category)

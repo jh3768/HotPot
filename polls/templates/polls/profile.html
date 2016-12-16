@@ -80,7 +80,13 @@
                     <a href="#" class="list-group-item">My Posts</a>
                     <a class="list-group-item" id="postItem" onclick="showPostForm()">Post Product</a>
                 </div>
-
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.extra_tags == 'dup' %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
                 <div id="contactForm" style="display: none;"> 
                     <h>Product Details</h> 
                     <form action="{% url 'polls:post' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
@@ -144,7 +150,7 @@
                    "<div class=row"+i / 3+">"+
                         "<div class='col-md-4 portfolio-item' id='product0'>"+
                             "<img class='img-responsive' src='/static"+obj[i].fields.url+"' alt='' style='width:200px;height:228px;''>"+
-                            "<h4>"+"Product Name: "+obj[i].fields.name+"</h4>"+
+                            "<h4>"+"Product: "+obj[i].fields.name+"</h4>"+
                             "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
                             "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
                             "<p>"+"Description: "+obj[i].fields.description+"</p>"+
@@ -171,7 +177,7 @@
                     $(".row"+~~(i / 3)).append(
                         "<div class='col-md-4 portfolio-item' id='product0'>"+
                             "<img class='img-responsive' src='/static"+obj[i].fields.url+"' alt='' style='width:200px;height:228px;'>"+
-                            "<h4>"+"Product Name: "+obj[i].fields.name+"</h4>"+
+                            "<h4>"+"Product: "+obj[i].fields.name+"</h4>"+
                             "<p>"+"Seller Contact: "+obj[i].fields.username+"</p>"+
                             "<p>"+"Price: "+obj[i].fields.price+" dollars"+"</p>"+
                             "<p>"+"Description: "+obj[i].fields.description+"</p>"+
